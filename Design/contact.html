@@ -64,8 +64,8 @@
               <div class="field"><label>Guests</label><select name="guests"><option>1 guest</option><option selected>2 guests</option><option>3 guests</option><option>4 guests</option></select></div>
             </div>
             <div class="form-row">
-              <div class="field"><label>Check-in</label><input type="date" name="checkin"></div>
-              <div class="field"><label>Check-out</label><input type="date" name="checkout"></div>
+              <div class="field"><label>Check-in</label><input type="date" name="checkin" required><span class="err">Enter a check-in date (today or later)</span></div>
+              <div class="field"><label>Check-out</label><input type="date" name="checkout" required><span class="err">Check-out must be after check-in</span></div>
             </div>
             <div class="field"><label>Room type</label><select name="room"><option value="">No preference</option><option>Twin Room</option><option>Double or Twin Room</option><option>Triple Room</option><option>Suite</option></select></div>
             <div class="field"><label>Message</label><textarea name="message" placeholder="Tell us about your stay…"></textarea></div>

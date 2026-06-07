@@ -5,6 +5,15 @@
   'use strict';
   var doc = document;
 
+  /* date helpers — use local date components to avoid UTC-offset drift */
+  function fmtDate(d) {
+    var y = d.getFullYear(), m = d.getMonth() + 1, day = d.getDate();
+    return y + '-' + (m < 10 ? '0' : '') + m + '-' + (day < 10 ? '0' : '') + day;
+  }
+  function todayStr() { return fmtDate(new Date()); }
+  function tomorrowStr() { var d = new Date(); d.setDate(d.getDate() + 1); return fmtDate(d); }
+  function dayAfterStr(dateStr) { var d = new Date(dateStr + 'T00:00:00'); d.setDate(d.getDate() + 1); return fmtDate(d); }
+
   /* ============================================================
      HOTEL CONFIG FILL
      Elements with data-h="key"      → text content from HOTEL
@@ -133,6 +142,16 @@
         else ctx.style.display = 'none';
       }
     }
+    // ensure date inputs have valid minimums and sane defaults
+    var mCi = modal.querySelector('[name="checkin"]');
+    var mCo = modal.querySelector('[name="checkout"]');
+    if (mCi && mCo) {
+      var tod = todayStr();
+      mCi.min = tod;
+      if (!mCi.value || mCi.value < tod) mCi.value = tomorrowStr();
+      mCo.min = dayAfterStr(mCi.value);
+      if (!mCo.value || mCo.value <= mCi.value) mCo.value = dayAfterStr(mCi.value);
+    }
     modal.classList.add('is-open');
     doc.body.style.overflow = 'hidden';
   }
@@ -147,6 +166,14 @@
     modal.addEventListener('click', function (e) {
       if (e.target === modal || e.target.closest('[data-modal-close]')) closeModal();
     });
+    var mCiEl = modal.querySelector('[name="checkin"]');
+    var mCoEl = modal.querySelector('[name="checkout"]');
+    if (mCiEl && mCoEl) {
+      mCiEl.addEventListener('change', function () {
+        mCoEl.min = dayAfterStr(mCiEl.value);
+        if (mCoEl.value <= mCiEl.value) mCoEl.value = dayAfterStr(mCiEl.value);
+      });
+    }
   }
   doc.addEventListener('keydown', function (e) {
     if (e.key === 'Escape') { closeModal(); closeLightbox(); }
@@ -182,12 +209,9 @@
     var ci = bookingBar.querySelector('[name="checkin"]');
     var co = bookingBar.querySelector('[name="checkout"]');
     if (ci && co) {
-      var t = new Date(); t.setDate(t.getDate() + 1);
-      var t2 = new Date(); t2.setDate(t2.getDate() + 3);
-      var fmt = function (d) { return d.toISOString().slice(0, 10); };
-      ci.value = fmt(t); ci.min = fmt(new Date());
-      co.value = fmt(t2); co.min = fmt(t);
-      ci.addEventListener('change', function () { co.min = ci.value; if (co.value < ci.value) co.value = ci.value; });
+      ci.min = todayStr(); ci.value = tomorrowStr();
+      co.min = dayAfterStr(ci.value); co.value = dayAfterStr(dayAfterStr(ci.value));
+      ci.addEventListener('change', function () { co.min = dayAfterStr(ci.value); if (co.value <= ci.value) co.value = dayAfterStr(ci.value); });
     }
   }
 
@@ -204,6 +228,20 @@
       if (field) field.classList.toggle('invalid', bad);
       if (bad) ok = false;
     });
+    // date range validation
+    var ciEl = form.querySelector('[name="checkin"]');
+    var coEl = form.querySelector('[name="checkout"]');
+    var today = todayStr();
+    if (ciEl) {
+      var ciField = ciEl.closest('.field');
+      var ciBad = !ciEl.value || ciEl.value < today;
+      if (ciBad) { if (ciField) ciField.classList.add('invalid'); ok = false; }
+    }
+    if (coEl && ciEl) {
+      var coField = coEl.closest('.field');
+      var coBad = !coEl.value || (ciEl.value && coEl.value <= ciEl.value);
+      if (coBad) { if (coField) coField.classList.add('invalid'); ok = false; }
+    }
     return ok;
   }
   doc.querySelectorAll('form[data-validate]').forEach(function (form) {
@@ -252,11 +290,24 @@
       .then(function (json) { json.ok ? showSuccess() : showError(); })
       .catch(showError);
     });
-    // clear invalid on input
+    // clear invalid on input; for date fields re-run date check so co stays linked
     form.addEventListener('input', function (e) {
       var field = e.target.closest('.field');
       if (field) field.classList.remove('invalid');
     });
+    // init standalone date pair (not inside modal)
+    if (!form.closest('#inquiry-modal')) {
+      var sCi = form.querySelector('[name="checkin"]');
+      var sCo = form.querySelector('[name="checkout"]');
+      if (sCi && sCo) {
+        sCi.min = todayStr(); if (!sCi.value || sCi.value < todayStr()) sCi.value = tomorrowStr();
+        sCo.min = dayAfterStr(sCi.value); if (!sCo.value || sCo.value <= sCi.value) sCo.value = dayAfterStr(sCi.value);
+        sCi.addEventListener('change', function () {
+          sCo.min = dayAfterStr(sCi.value);
+          if (sCo.value <= sCi.value) sCo.value = dayAfterStr(sCi.value);
+        });
+      }
+    }
   });
 
   /* ============================================================
