@@ -214,12 +214,43 @@
         if (firstBad) firstBad.focus();
         return;
       }
-      var success = form.parentElement.querySelector('.form-success');
-      if (success) {
+
+      var wrap    = form.parentElement;
+      var success = wrap.querySelector('.form-success');
+      var errBox  = wrap.querySelector('.form-error');
+      var btn     = form.querySelector('[type="submit"]');
+      var btnText = btn ? btn.textContent : '';
+
+      function showSuccess() {
         form.style.display = 'none';
-        success.classList.add('show');
+        if (errBox) errBox.classList.remove('show');
+        if (success) success.classList.add('show');
+        form.reset();
       }
-      form.reset();
+      function showError() {
+        if (btn) { btn.disabled = false; btn.textContent = btnText; }
+        if (errBox) errBox.classList.add('show');
+      }
+
+      var endpoint = window.HOTEL && window.HOTEL.formEndpoint;
+      if (!endpoint) { showSuccess(); return; }
+
+      // collect form fields
+      var data = { source: form.closest('#inquiry-modal') ? 'modal' : 'contact-form' };
+      form.querySelectorAll('[name]').forEach(function (el) {
+        if (el.name) data[el.name] = el.value;
+      });
+
+      if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
+
+      fetch(endpoint, {
+        method:  'POST',
+        headers: { 'Content-Type': 'text/plain' },
+        body:    JSON.stringify(data)
+      })
+      .then(function (r) { return r.json(); })
+      .then(function (json) { json.ok ? showSuccess() : showError(); })
+      .catch(showError);
     });
     // clear invalid on input
     form.addEventListener('input', function (e) {

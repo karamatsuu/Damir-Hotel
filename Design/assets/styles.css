@@ -411,6 +411,9 @@ body.nav-open .mobile-menu a:nth-child(7){ transition-delay:.38s; }
 .form-success{ display:none; text-align:center; padding:1rem 0; }
 .form-success.show{ display:block; animation:fadeUp .6s var(--ease); }
 .form-success .ok{ width:58px; height:58px; border-radius:50%; border:1px solid var(--gold); color:var(--gold); display:grid; place-items:center; margin:0 auto 1.2rem; font-size:1.5rem; }
+.form-error{ display:none; padding:.9rem 1rem; margin-top:1rem; border:1px solid #e0c4c4; border-radius:var(--radius); background:#fdf6f6; color:#7a3b3b; font-size:.875rem; line-height:1.5; }
+.form-error.show{ display:block; animation:fadeUp .4s var(--ease); }
+.form-error a{ color:inherit; text-decoration:underline; }
 
 /* ---------- reveal animation ---------- */
 .reveal{ opacity:0; transform:translateY(26px); transition:opacity 1s var(--ease), transform 1s var(--ease); }

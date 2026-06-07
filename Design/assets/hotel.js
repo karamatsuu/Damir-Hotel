@@ -12,6 +12,12 @@ window.HOTEL = {
   phone:   '+998 55 106 07 07',
   email:   'damirhotel@gmail.com',
 
+  /* -- form endpoint (Google Apps Script web app URL) --
+     Paste the URL from your deployed Apps Script here.
+     See Design/assets/form-endpoint.gs for setup instructions.
+     Leave empty to skip submission (dev mode). */
+  formEndpoint: '',
+
   /* -- footer blurb -- */
   footerDesc: 'A quiet landmark of warm hospitality in Nukus, Karakalpakstan — considered rooms, generous breakfasts and the kind of calm that makes a stay feel like a retreat.',
 
