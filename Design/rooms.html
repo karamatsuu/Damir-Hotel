@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rooms & Suites — Damir Hotel</title>
+<meta name="description" content="Twin, double or twin, triple rooms and suites at Damir Hotel in central Nukus, with breakfast, Wi-Fi and private bathrooms.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<header class="site-header on-light is-solid">
+  <div class="container">
+    <a href="index.html" class="brand" aria-label="Damir Hotel home">
+      <span class="brand-mark">D</span>
+      <span class="brand-text"><span class="brand-name">DAMIR</span><span class="brand-sub">HOTEL</span></span>
+    </a>
+    <nav class="main-nav"><a href="index.html" class="nav-link">Home</a><a href="rooms.html" class="nav-link is-active">Rooms & Suites</a><a href="dining.html" class="nav-link">Dining</a><a href="gallery.html" class="nav-link">Gallery</a><a href="about.html" class="nav-link">About</a><a href="contact.html" class="nav-link">Contact</a></nav>
+    <div class="header-right">
+      <a href="#" class="btn btn--ghost header-cta" data-book>Book a stay</a>
+      <button class="nav-toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<nav class="mobile-menu"><a href="index.html">Home</a><a href="rooms.html">Rooms & Suites</a><a href="dining.html">Dining</a><a href="gallery.html">Gallery</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="#" class="btn" data-book>Book a stay</a></nav>
+
+<section class="page-hero">
+  <div class="container">
+    <p class="eyebrow"><span class="hairline"></span>Rooms &amp; Suites</p>
+    <h1>Four room types,<br>one quiet standard.</h1>
+    <p class="crumbs"><a href="index.html">Home</a> &nbsp;/&nbsp; Rooms &amp; Suites</p>
+  </div>
+</section>
+<section class="section" style="padding-top:0">
+  <div class="container">
+    <div class="sec-head reveal" style="max-width:62ch;margin-bottom:3rem">
+      <p>Every room at Damir includes air conditioning, a private bathroom, flat-screen TV, free Wi-Fi, tea and coffee facilities, city views and terrace access. Breakfast is included, and no prepayment is needed for direct reservation inquiries.</p>
+    </div>
+    <div class="grid grid-3" id="rooms-grid"></div>
+  </div>
+</section>
+
+<section class="cta-banner">
+  <div class="hero-media"><img src="assets/photos/exterior-night.jpg" alt="Damir Hotel at night"></div>
+  <div class="container cta-inner">
+    <p class="eyebrow" style="color:var(--gold-2)">Reserve your room</p>
+    <h2 class="serif" style="font-style:normal">Your quiet retreat is ready when you are.</h2>
+    <p>Tell us your dates and we'll take care of the rest. No payment now — just a friendly confirmation from our team.</p>
+    <a href="#" class="btn btn--light" data-book>Book your stay</a>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="brand"><span class="brand-mark">D</span><span class="brand-text"><span class="brand-name">DAMIR</span><span class="brand-sub">HOTEL</span></span></a>
+        <p>A quiet landmark of warm hospitality in Nukus, Uzbekistan — considered rooms, generous breakfasts and the kind of calm that makes a stay feel like a retreat.</p>
+      </div>
+      <div class="footer-col"><h5>Explore</h5><ul><li><a href="rooms.html">Rooms & Suites</a></li><li><a href="dining.html">Dining</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="footer-col"><h5>Stay</h5><ul>
+        <li><a href="#" data-book>Book a stay</a></li>
+        <li><a href="rooms.html">Rooms &amp; Suites</a></li>
+        <li><a href="dining.html">Breakfast &amp; Dining</a></li>
+        <li><a href="contact.html">Directions</a></li>
+      </ul></div>
+      <div class="footer-col"><h5>Contact</h5><ul>
+        <li>Рауаж 4, 230100 Nukus</li>
+        <li><a href="tel:+998 55 106 07 07">+998 55 106 07 07</a></li>
+        <li><a href="mailto:damirhotel@gmail.com">damirhotel@gmail.com</a></li>
+        <li>Reception open 24 hours</li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> Damir Hotel. All rights reserved.</span>
+      <span class="social"><a href="https://www.instagram.com/damir.hotel.nukus?igsh=MXI1bjc1am8xc3BlMA==" target="_blank" rel="noopener">Instagram</a><a href="https://t.me/damirhotel" target="_blank" rel="noopener">Telegram</a></span>
+    </div>
+  </div>
+</footer>
+
+<div class="modal" id="inquiry-modal" role="dialog" aria-modal="true" aria-label="Booking inquiry">
+  <div class="modal-card">
+    <button class="modal-close" data-modal-close aria-label="Close">&times;</button>
+    <p class="eyebrow"><span data-modal-context>Reservation inquiry</span></p>
+    <h3 class="serif">Request your stay</h3>
+    <form data-validate novalidate>
+      <div class="form-row">
+        <div class="field"><label>First &amp; last name</label><input type="text" name="name" required placeholder="Your name"><span class="err">Please enter your name</span></div>
+        <div class="field"><label>Email</label><input type="email" name="email" required placeholder="you@email.com"><span class="err">Enter a valid email</span></div>
+      </div>
+      <div class="form-row">
+        <div class="field"><label>Check-in</label><input type="date" name="checkin"></div>
+        <div class="field"><label>Check-out</label><input type="date" name="checkout"></div>
+      </div>
+      <div class="form-row">
+        <div class="field"><label>Guests</label><select name="guests"><option>1 guest</option><option selected>2 guests</option><option>3 guests</option><option>4 guests</option></select></div>
+        <div class="field"><label>Room type</label><select name="room"><option value="">No preference</option><option value="Twin Room">Twin Room</option><option value="Double or Twin Room">Double or Twin Room</option><option value="Triple Room">Triple Room</option><option value="Suite">Suite</option></select></div>
+      </div>
+      <div class="field"><label>Anything we should know?</label><textarea name="message" placeholder="Arrival time, occasion, requests…"></textarea></div>
+      <button type="submit" class="btn btn--block">Send inquiry</button>
+      <p class="muted" style="font-size:.78rem;text-align:center;margin:1rem 0 0">No payment is taken now — our team replies within a few hours to confirm availability.</p>
+    </form>
+    <div class="form-success">
+      <div class="ok">&#10003;</div>
+      <h3 class="serif" style="margin-bottom:.6rem">Thank you</h3>
+      <p>Your request has reached our reservations desk. We'll be in touch shortly to confirm your stay at Damir Hotel.</p>
+      <button class="btn btn--ghost" data-modal-close style="margin-top:.6rem">Close</button>
+    </div>
+  </div>
+</div>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+  <button class="lb-btn lb-close" aria-label="Close">&times;</button>
+  <button class="lb-btn lb-prev" aria-label="Previous">&#8249;</button>
+  <img alt="Damir Hotel gallery image">
+  <button class="lb-btn lb-next" aria-label="Next">&#8250;</button>
+  <span class="lb-count"></span>
+</div>
+<script src="assets/rooms.js"></script>
+<script>
+document.getElementById('rooms-grid').innerHTML = window.DAMIR_ROOMS.map(function(r,i){
+  return window.renderRoomCard(r).replace('room-card reveal','room-card reveal d'+(i%3));
+}).join('');
+</script>
+<script src="assets/site.js"></script>
+<script src="assets/i18n.js"></script>
+</body>
+</html>
