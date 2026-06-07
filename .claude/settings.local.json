@@ -1,7 +1,28 @@
 {
   "permissions": {
     "allow": [
-      "WebSearch"
+      "WebSearch",
+      "Bash(git -C /Users/k/PetProjects/Damir remote -v)",
+      "Bash(gh pr *)",
+      "Bash(brew list *)",
+      "Bash(find /opt /usr/local /usr/bin -name \"gh\" 2>/dev/null | head -5; git remote -v; git branch -a)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(brew install *)",
+      "Bash(ls /Users/k/.claude/plugins/cache/claude-plugins-official/superpowers/5.1.0/scripts/)",
+      "Read(//Users/k/.claude/plugins/**)",
+      "Read(//Users/k/.claude/**)",
+      "Bash(bash /Users/k/.claude/plugins/cache/claude-plugins-official/superpowers/5.1.0/skills/brainstorming/scripts/start-server.sh --project-dir /Users/k/PetProjects/Damir)",
+      "Bash(magick --version)",
+      "Bash(convert --version)",
+      "Bash(ffmpeg -version)",
+      "Bash(sips --help)",
+      "Bash(python3 -c \"from PIL import Image; print\\('PIL ok'\\)\")",
+      "Bash(python3 -c \"import PIL; print\\(PIL.__version__\\)\")",
+      "Bash(pip3 install *)",
+      "Bash(sort -k5 -hr)",
+      "Bash(pip3 show *)",
+      "Bash(python3 -c \"from PIL import Image; print\\('Pillow ready'\\)\")"
     ]
   }
 }

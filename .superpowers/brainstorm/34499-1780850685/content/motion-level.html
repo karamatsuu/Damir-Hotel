@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Page Motion Level</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Georgia, serif; background: #f5f0eb; color: #1a1a18; padding: 2rem; }
+  h2 { font-size: 1.5rem; margin-bottom: .4rem; }
+  .subtitle { color: #666; font-family: sans-serif; font-size: .95rem; margin-bottom: 2rem; }
+
+  .demos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+
+  .demo-card {
+    border: 2px solid transparent;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    background: #fff;
+    box-shadow: 0 2px 12px rgba(0,0,0,.08);
+    transition: border-color .2s, box-shadow .2s;
+  }
+  .demo-card:hover { box-shadow: 0 6px 20px rgba(0,0,0,.12); }
+  .demo-card.selected { border-color: #c9a96e; }
+
+  .preview {
+    height: 260px;
+    background: #f8f5f0;
+    padding: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* shared element shapes */
+  .el-bar  { height: 12px; border-radius: 6px; background: #d4c9b8; }
+  .el-img  { border-radius: 6px; background: linear-gradient(135deg, #c9b99a, #8a7355); }
+  .el-card { border-radius: 8px; background: #fff; border: 1px solid #e8e0d4; padding: .6rem; display:flex; gap:.5rem; align-items:center; }
+  .el-dot  { width: 28px; height: 28px; border-radius: 50%; background: #c9a96e; flex-shrink:0; }
+  .el-lines { display:flex; flex-direction:column; gap:4px; flex:1; }
+  .el-line { height:7px; border-radius:4px; background:#e8e0d4; }
+  .el-line.s { width:60%; }
+
+  /* ---- A: Subtle (already on site, barely enhanced) ---- */
+  .a-hero { height: 80px; border-radius:6px; }
+  .a-hero, .a-card1, .a-card2, .a-card3, .a-bar { opacity:0; animation-fill-mode: forwards; }
+  .a-hero  { animation: fadeUp .5s .1s ease both; }
+  .a-card1 { animation: fadeUp .45s .35s ease both; }
+  .a-card2 { animation: fadeUp .45s .5s  ease both; }
+  .a-card3 { animation: fadeUp .45s .65s ease both; }
+  .a-bar   { animation: fadeUp .4s .8s  ease both; }
+  @keyframes fadeUp { from{opacity:0;transform:translateY(12px)} to{opacity:1;transform:translateY(0)} }
+
+  /* ---- B: Moderate (pronounced slide-up + scale, hover lift) ---- */
+  .b-hero  { height:80px; border-radius:6px; opacity:0; animation: slideUpScale .6s .05s cubic-bezier(.22,.68,0,1.2) both; }
+  .b-card1 { opacity:0; animation: slideUpScale .55s .2s  cubic-bezier(.22,.68,0,1.2) both; }
+  .b-card2 { opacity:0; animation: slideUpScale .55s .35s cubic-bezier(.22,.68,0,1.2) both; }
+  .b-card3 { opacity:0; animation: slideUpScale .55s .5s  cubic-bezier(.22,.68,0,1.2) both; }
+  .b-bar   { width:0; animation: growBar .6s .55s ease both; border-radius:4px; height:3px; background:#c9a96e; }
+  @keyframes slideUpScale { from{opacity:0;transform:translateY(24px) scale(.97)} to{opacity:1;transform:translateY(0) scale(1)} }
+  @keyframes growBar { from{width:0} to{width:70%} }
+  .b-hover { transition: transform .25s ease, box-shadow .25s ease; }
+  .b-hover:hover { transform: translateY(-4px); box-shadow: 0 8px 20px rgba(0,0,0,.15); }
+
+  /* ---- C: Bold (stagger + blur reveal + parallax hint) ---- */
+  .c-bg { position:absolute; inset:0; background:linear-gradient(135deg,#c9b99a,#8a7355); opacity:0; animation: bgReveal .8s .0s ease both; }
+  @keyframes bgReveal { from{opacity:0;transform:scale(1.06)} to{opacity:.18;transform:scale(1)} }
+  .c-hero { height:80px; border-radius:6px; position:relative; z-index:2; opacity:0; animation: boldReveal .7s .1s cubic-bezier(.16,1,.3,1) both; }
+  .c-card1 { position:relative;z-index:2;opacity:0; animation: boldReveal .65s .25s cubic-bezier(.16,1,.3,1) both; }
+  .c-card2 { position:relative;z-index:2;opacity:0; animation: boldReveal .65s .38s cubic-bezier(.16,1,.3,1) both; }
+  .c-card3 { position:relative;z-index:2;opacity:0; animation: boldReveal .65s .51s cubic-bezier(.16,1,.3,1) both; }
+  .c-line-anim { width:0; animation: cLine .8s .65s ease both; height:2px; background:#c9a96e; border-radius:2px; position:relative;z-index:2; }
+  @keyframes boldReveal { from{opacity:0;transform:translateY(32px);filter:blur(4px)} to{opacity:1;transform:none;filter:none} }
+  @keyframes cLine { from{width:0;opacity:0} to{width:60%;opacity:1} }
+
+  /* replay button */
+  .replay-btn {
+    position:absolute; top:8px; right:8px; z-index:30;
+    width:24px; height:24px; border-radius:50%; background:rgba(0,0,0,.15);
+    border:none; cursor:pointer; display:flex; align-items:center; justify-content:center;
+    font-size:11px; color:#fff;
+    transition: background .2s;
+  }
+  .replay-btn:hover { background:rgba(0,0,0,.3); }
+
+  .card-label { padding: 1rem 1.2rem; font-family:sans-serif; }
+  .card-label h3 { font-size:1rem; font-weight:600; margin-bottom:.25rem; }
+  .card-label p { font-size:.82rem; color:#666; line-height:1.5; }
+  .tag { display:inline-block; font-size:.68rem; padding:.2em .6em; border-radius:20px; margin-bottom:.4rem; font-weight:600; letter-spacing:.05em; text-transform:uppercase; }
+  .tag.rec { background:#c9a96e22; color:#9a7040; border:1px solid #c9a96e55; }
+  .tag.classic { background:#e8e8e8; color:#666; }
+</style>
+</head>
+<body>
+
+<h2>How much motion on each page?</h2>
+<p class="subtitle">This controls cards, section headings, and hover effects across all pages — not the hero slideshow. Click ↺ to replay the animation.</p>
+
+<div class="demos">
+
+  <!-- A: Subtle -->
+  <div class="demo-card" data-choice="a" onclick="toggleSelect(this)">
+    <div class="preview" id="pa">
+      <button class="replay-btn" onclick="event.stopPropagation();replay('a')" title="Replay">↺</button>
+      <div class="el-img a-hero" style="flex:0 0 80px"></div>
+      <div class="el-card a-card1 b-hover"><div class="el-dot"></div><div class="el-lines"><div class="el-line"></div><div class="el-line s"></div></div></div>
+      <div class="el-card a-card2 b-hover"><div class="el-dot" style="background:#8a7355"></div><div class="el-lines"><div class="el-line"></div><div class="el-line s"></div></div></div>
+      <div class="el-bar a-bar" style="width:55%"></div>
+    </div>
+    <div class="card-label">
+      <div class="tag classic">Refined</div>
+      <h3>A — Subtle</h3>
+      <p>Gentle fade-up, 12px travel. Very quiet — content feels present, not performed. Closest to the current site's style.</p>
+    </div>
+  </div>
+
+  <!-- B: Moderate -->
+  <div class="demo-card" data-choice="b" onclick="toggleSelect(this)">
+    <div class="preview" id="pb">
+      <button class="replay-btn" onclick="event.stopPropagation();replay('b')" title="Replay">↺</button>
+      <div class="el-img b-hero" style="flex:0 0 80px"></div>
+      <div class="el-card b-card1 b-hover"><div class="el-dot"></div><div class="el-lines"><div class="el-line"></div><div class="el-line s"></div></div></div>
+      <div class="el-card b-card2 b-hover"><div class="el-dot" style="background:#8a7355"></div><div class="el-lines"><div class="el-line"></div><div class="el-line s"></div></div></div>
+      <div class="b-bar"></div>
+    </div>
+    <div class="card-label">
+      <div class="tag rec">Recommended</div>
+      <h3>B — Moderate</h3>
+      <p>Slide-up with slight scale, spring easing, card hover lifts, animated accent lines. Feels polished and crafted without being distracting.</p>
+    </div>
+  </div>
+
+  <!-- C: Bold -->
+  <div class="demo-card" data-choice="c" onclick="toggleSelect(this)">
+    <div class="preview" id="pc">
+      <button class="replay-btn" onclick="event.stopPropagation();replay('c')" title="Replay">↺</button>
+      <div class="c-bg"></div>
+      <div class="el-img c-hero" style="flex:0 0 80px"></div>
+      <div class="el-card c-card1"><div class="el-dot"></div><div class="el-lines"><div class="el-line"></div><div class="el-line s"></div></div></div>
+      <div class="el-card c-card2"><div class="el-dot" style="background:#8a7355"></div><div class="el-lines"><div class="el-line"></div><div class="el-line s"></div></div></div>
+      <div class="c-line-anim"></div>
+    </div>
+    <div class="card-label">
+      <div class="tag classic">Expressive</div>
+      <h3>C — Bold</h3>
+      <p>Blur + large travel + ambient background reveal. More dramatic — suits a flagship page but can feel heavy on secondary pages.</p>
+    </div>
+  </div>
+
+</div>
+
+<script>
+function replay(id) {
+  var el = document.getElementById('p' + id);
+  var clone = el.cloneNode(true);
+  // re-attach replay button event
+  var btn = clone.querySelector('.replay-btn');
+  if (btn) btn.onclick = function(e){ e.stopPropagation(); replay(id); };
+  el.parentNode.replaceChild(clone, el);
+}
+</script>
+</body>
+</html>
