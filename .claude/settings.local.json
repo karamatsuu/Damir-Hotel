@@ -22,7 +22,12 @@
       "Bash(pip3 install *)",
       "Bash(sort -k5 -hr)",
       "Bash(pip3 show *)",
-      "Bash(python3 -c \"from PIL import Image; print\\('Pillow ready'\\)\")"
+      "Bash(python3 -c \"from PIL import Image; print\\('Pillow ready'\\)\")",
+      "Bash(pkill -f \"python3 -m http.server 8787\")",
+      "Bash(python3 -m http.server 8787)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:8787/index.html)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(pkill -f \"http.server 8787\")"
     ]
   }
 }
