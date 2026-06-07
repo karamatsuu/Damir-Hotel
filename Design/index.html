@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Damir Hotel — Quiet luxury in Nukus, Uzbekistan</title>
-<meta name="description" content="Damir Hotel — a calm, warm retreat in Nukus, Uzbekistan. Considered rooms and suites, a generous breakfast and unhurried 24-hour service.">
+<title>Damir Hotel — Quiet luxury in Nukus, Karakalpakstan</title>
+<meta name="description" content="Damir Hotel — a calm, warm retreat in Nukus, Karakalpakstan. Considered rooms and suites, a generous breakfast and unhurried 24-hour service.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
@@ -33,7 +33,7 @@
 <section class="hero">
   <div class="hero-media"><img src="assets/photos/junior-suite.jpg" alt="A warm, light-filled suite at Damir Hotel"></div>
   <div class="container hero-inner">
-    <p class="eyebrow reveal-hero h1">Nukus, Uzbekistan</p>
+    <p class="eyebrow reveal-hero h1">Nukus, Karakalpakstan</p>
     <h1 class="reveal-hero h2">Quiet luxury,<br>warmly kept.</h1>
     <p class="hero-sub reveal-hero h3">Damir Hotel is a calm retreat of oak-warmed rooms, generous breakfasts and unhurried service — a considered base for work or rest.</p>
     <div class="hero-actions reveal-hero h3">
@@ -67,7 +67,7 @@
       <a href="about.html" class="tlink" style="margin-top:.6rem">Our story <svg class="arr" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a>
     </div>
     <div class="split-media tall reveal d1">
-      <img src="assets/photos/exterior-day.jpg" alt="The white façade of Damir Hotel">
+      <img src="assets/photos/IMG_1920.png" alt="The white façade of Damir Hotel">
       <span class="media-tag">Est. — Nukus</span>
     </div>
   </div>
@@ -108,7 +108,7 @@
 <!-- featured rooms -->
 <section class="section" style="padding-bottom:0">
   <div class="container">
-    <div class="facts reveal">
+    <div class="facts reveal" data-h-stats>
       <div class="fact"><div class="n">8.2</div><div class="l">Very good rating</div></div>
       <div class="fact"><div class="n">9.3</div><div class="l">Location score</div></div>
       <div class="fact"><div class="n">155</div><div class="l">Guest reviews</div></div>
@@ -151,7 +151,7 @@
 </section>
 
 <!-- testimonials -->
-<section class="section" data-quotes='[{"text":"The warmest welcome we had on our whole trip. The room was immaculate and the breakfast was extraordinary.","by":"Aigerim K. — Almaty"},{"text":"Quiet, spotless and genuinely kind service. The suite felt more like a private apartment than a hotel.","by":"Daniel R. — London"},{"text":"We came for one night and extended to three. Everything just works, and nothing is rushed.","by":"Sofia M. — Istanbul"}]'>
+<section class="section" data-testimonials>
   <div class="container">
     <div class="quote reveal">
       <div class="mark">&ldquo;</div>
@@ -182,7 +182,7 @@
           <span class="brand-mark">D</span>
           <span class="brand-text"><span class="brand-name">DAMIR</span><span class="brand-sub">HOTEL</span></span>
         </a>
-        <p>A quiet landmark of warm hospitality in Nukus, Uzbekistan — considered rooms, generous breakfasts and the kind of calm that makes a stay feel like a retreat.</p>
+        <p data-h="footerDesc">A quiet landmark of warm hospitality in Nukus, Karakalpakstan — considered rooms, generous breakfasts and the kind of calm that makes a stay feel like a retreat.</p>
       </div>
       <div class="footer-col">
         <h5>Explore</h5>
@@ -200,16 +200,16 @@
       <div class="footer-col">
         <h5>Contact</h5>
         <ul>
-          <li>Рауаж 4, 230100 Nukus</li>
-          <li><a href="tel:+998 55 106 07 07">+998 55 106 07 07</a></li>
-          <li><a href="mailto:damirhotel@gmail.com">damirhotel@gmail.com</a></li>
+          <li data-h="address">Рауаж 4, 230100 Nukus</li>
+          <li><a data-h="phone" href="tel:+998 55 106 07 07">+998 55 106 07 07</a></li>
+          <li><a data-h="email" href="mailto:damirhotel@gmail.com">damirhotel@gmail.com</a></li>
           <li>Reception open 24 hours</li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© <span data-year>2026</span> Damir Hotel. All rights reserved.</span>
-      <span class="social"><a href="https://www.instagram.com/damir.hotel.nukus?igsh=MXI1bjc1am8xc3BlMA==" target="_blank" rel="noopener">Instagram</a><a href="https://t.me/damirhotel" target="_blank" rel="noopener">Telegram</a></span>
+      <span>© <span data-year>2026</span> <span data-h="name">Damir Hotel</span>. All rights reserved.</span>
+      <span class="social" data-h-social><a href="https://www.instagram.com/damir.hotel.nukus?igsh=MXI1bjc1am8xc3BlMA==" target="_blank" rel="noopener">Instagram</a><a href="https://t.me/damirhotel" target="_blank" rel="noopener">Telegram</a></span>
     </div>
   </div>
 </footer>
@@ -256,6 +256,7 @@
   <button class="lb-btn lb-next" aria-label="Next">&#8250;</button>
   <span class="lb-count"></span>
 </div>
+<script src="assets/hotel.js"></script>
 <script src="assets/rooms.js"></script>
 <script>
 (function(){

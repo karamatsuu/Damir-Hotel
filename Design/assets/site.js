@@ -5,6 +5,59 @@
   'use strict';
   var doc = document;
 
+  /* ============================================================
+     HOTEL CONFIG FILL
+     Elements with data-h="key"      → text content from HOTEL
+     Elements with data-h-href="key" → href attribute from HOTEL
+     Elements with data-h-src="key"  → src attribute from HOTEL
+     Elements with data-h-stats      → rendered from HOTEL.stats
+     Elements with data-h-social     → rendered from HOTEL.social
+     Nested paths use dot notation:  "maps.link"
+     ============================================================ */
+  (function () {
+    var H = window.HOTEL;
+    if (!H) return;
+    function get(path) {
+      return path.split('.').reduce(function (o, k) { return o && o[k]; }, H);
+    }
+    doc.querySelectorAll('[data-h]').forEach(function (el) {
+      var v = get(el.getAttribute('data-h'));
+      if (v == null) return;
+      el.textContent = v;
+      if (el.tagName === 'A') {
+        if (el.getAttribute('data-h') === 'phone') el.href = 'tel:' + v;
+        else if (el.getAttribute('data-h') === 'email') el.href = 'mailto:' + v;
+      }
+    });
+    doc.querySelectorAll('[data-h-href]').forEach(function (el) {
+      var v = get(el.getAttribute('data-h-href'));
+      if (v != null) el.setAttribute('href', v);
+    });
+    doc.querySelectorAll('[data-h-src]').forEach(function (el) {
+      var v = get(el.getAttribute('data-h-src'));
+      if (v != null) el.setAttribute('src', v);
+    });
+    doc.querySelectorAll('[data-h-stats]').forEach(function (el) {
+      if (!H.stats) return;
+      el.textContent = '';
+      H.stats.forEach(function (s) {
+        var fact = doc.createElement('div'); fact.className = 'fact';
+        var n = doc.createElement('div'); n.className = 'n'; n.textContent = s.n;
+        var l = doc.createElement('div'); l.className = 'l'; l.textContent = s.l;
+        fact.appendChild(n); fact.appendChild(l); el.appendChild(fact);
+      });
+    });
+    doc.querySelectorAll('[data-h-social]').forEach(function (el) {
+      if (!H.social) return;
+      el.textContent = '';
+      H.social.forEach(function (s) {
+        var a = doc.createElement('a');
+        a.href = s.url; a.target = '_blank'; a.rel = 'noopener'; a.textContent = s.label;
+        el.appendChild(a);
+      });
+    });
+  })();
+
   /* ---- year ---- */
   doc.querySelectorAll('[data-year]').forEach(function (el) {
     el.textContent = new Date().getFullYear();
@@ -257,9 +310,10 @@
   /* ============================================================
      TESTIMONIAL slider
      ============================================================ */
-  var quoteWrap = doc.querySelector('[data-quotes]');
+  var quoteWrap = doc.querySelector('[data-testimonials], [data-quotes]');
   if (quoteWrap) {
-    var quotes = JSON.parse(quoteWrap.getAttribute('data-quotes'));
+    var quotes = (window.HOTEL && window.HOTEL.testimonials) ||
+      JSON.parse(quoteWrap.getAttribute('data-quotes') || '[]');
     var bq = quoteWrap.querySelector('blockquote');
     var by = quoteWrap.querySelector('.by');
     var dotsWrap = quoteWrap.querySelector('.quote-dots');
