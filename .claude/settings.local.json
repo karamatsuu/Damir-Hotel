@@ -27,7 +27,24 @@
       "Bash(python3 -m http.server 8787)",
       "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:8787/index.html)",
       "mcp__Claude_Preview__preview_start",
-      "Bash(pkill -f \"http.server 8787\")"
+      "Bash(pkill -f \"http.server 8787\")",
+      "Bash(git -C /Users/k/PetProjects/Damir diff --stat HEAD)",
+      "Bash(git -C /Users/k/PetProjects/Damir show d64d794 --stat)",
+      "Bash(git -C /Users/k/PetProjects/Damir diff HEAD)",
+      "Bash(git -C /Users/k/PetProjects/Damir checkout -b feature/booking-date-validation)",
+      "Bash(security find-internet-password *)",
+      "Bash(GH_TOKEN=__CMDSUB_OUTPUT__ gh pr create --title 'Add date validation to booking forms' --body ' *)",
+      "Bash(git -C /Users/k/PetProjects/Damir log --oneline origin/main..feature/booking-date-validation)",
+      "Bash(git -C /Users/k/PetProjects/Damir log --oneline -3)",
+      "Bash(git -C /Users/k/PetProjects/Damir fetch origin)",
+      "Bash(git -C /Users/k/PetProjects/Damir log --oneline origin/main)",
+      "Bash(git -C /Users/k/PetProjects/Damir branch -r)",
+      "Bash(git push *)",
+      "Bash(GH_TOKEN=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 gh pr create --repo karamatsuu/Damir-Hotel --base main --head feature/booking-date-validation --title 'Fix validation, accessibility, broken links and i18n bugs sitewide' --body ' *)",
+      "Bash(GH_TOKEN=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 gh api repos/karamatsuu/Damir-Hotel/compare/main...feature/booking-date-validation)",
+      "Bash(python3 -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\('ahead by', d['ahead_by'], 'commits'\\); [print\\(' -', c['commit']['message'].splitlines\\(\\)[0]\\) for c in d['commits']]\")",
+      "Bash(GH_TOKEN=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 gh api repos/karamatsuu/Damir-Hotel/branches)",
+      "Bash(python3 -c \"import sys,json; [print\\(b['name'], b['commit']['sha'][:8]\\) for b in json.load\\(sys.stdin\\)]\")"
     ]
   }
 }
