@@ -34,7 +34,7 @@
       if (v == null) return;
       el.textContent = v;
       if (el.tagName === 'A') {
-        if (el.getAttribute('data-h') === 'phone') el.href = 'tel:' + v;
+        if (el.getAttribute('data-h') === 'phone') el.href = 'tel:' + v.replace(/\s/g, '');
         else if (el.getAttribute('data-h') === 'email') el.href = 'mailto:' + v;
       }
     });
@@ -224,7 +224,8 @@
       var field = input.closest('.field');
       var val = (input.value || '').trim();
       var bad = !val;
-      if (input.type === 'email' && val) bad = !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(val);
+      if (input.name === 'name' && val) bad = val.length < 2 || !/[A-Za-zÀ-ÿЀ-ӿ]/.test(val);
+      if (input.type === 'email' && val) bad = !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(val);
       if (field) field.classList.toggle('invalid', bad);
       if (bad) ok = false;
     });
@@ -421,4 +422,24 @@
     bq.style.transition = 'opacity .35s ease'; by.style.transition = 'opacity .35s ease';
     reset();
   }
+
+  /* ---- label↔input association + autocomplete ---- */
+  (function () {
+    var used = {};
+    doc.querySelectorAll('.field').forEach(function (field) {
+      var label = field.querySelector('label');
+      var ctrl  = field.querySelector('input, select, textarea');
+      if (!label || !ctrl || ctrl.id) return;
+      var base = 'f-' + (ctrl.name || 'ctrl');
+      var id = base, n = 0;
+      while (doc.getElementById(id) || used[id]) { id = base + '-' + (++n); }
+      used[id] = true;
+      ctrl.id = id;
+      label.setAttribute('for', id);
+    });
+    var ac = { name: 'name', email: 'email', phone: 'tel' };
+    doc.querySelectorAll('.field input').forEach(function (el) {
+      if (ac[el.name] && !el.getAttribute('autocomplete')) el.setAttribute('autocomplete', ac[el.name]);
+    });
+  })();
 })();

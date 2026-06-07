@@ -28,7 +28,7 @@
 <nav class="mobile-menu"><a href="index.html">Home</a><a href="rooms.html">Rooms & Suites</a><a href="dining.html">Dining</a><a href="gallery.html">Gallery</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="#" class="btn" data-book>Book a stay</a></nav>
 
 <section class="page-hero has-media">
-  <div class="hero-media"><img src="assets/photos/lobby-elevator.jpg" alt="Calm, kept<br>with care."></div>
+  <div class="hero-media"><img src="assets/photos/lobby-elevator.jpg" alt="Lobby at Damir Hotel"></div>
   <div class="container" style="position:relative;z-index:2;padding-bottom:1rem">
     <p class="eyebrow">Our story</p>
     <h1>Calm, kept<br>with care.</h1>
@@ -155,7 +155,7 @@
       </ul></div>
       <div class="footer-col"><h5>Contact</h5><ul>
         <li data-h="address">Рауаж 4, 230100 Nukus</li>
-        <li><a data-h="phone" href="tel:+998 55 106 07 07">+998 55 106 07 07</a></li>
+        <li><a data-h="phone" href="tel:+998551060707">+998 55 106 07 07</a></li>
         <li><a data-h="email" href="mailto:damirhotel@gmail.com">damirhotel@gmail.com</a></li>
         <li>Reception open 24 hours</li>
       </ul></div>
@@ -178,8 +178,8 @@
         <div class="field"><label>Email</label><input type="email" name="email" required placeholder="you@email.com"><span class="err">Enter a valid email</span></div>
       </div>
       <div class="form-row">
-        <div class="field"><label>Check-in</label><input type="date" name="checkin"></div>
-        <div class="field"><label>Check-out</label><input type="date" name="checkout"></div>
+        <div class="field"><label>Check-in</label><input type="date" name="checkin" required><span class="err">Enter a check-in date (today or later)</span></div>
+        <div class="field"><label>Check-out</label><input type="date" name="checkout" required><span class="err">Check-out must be after check-in</span></div>
       </div>
       <div class="form-row">
         <div class="field"><label>Guests</label><select name="guests"><option>1 guest</option><option selected>2 guests</option><option>3 guests</option><option>4 guests</option></select></div>
@@ -194,6 +194,9 @@
       <h3 class="serif" style="margin-bottom:.6rem">Thank you</h3>
       <p>Your request has reached our reservations desk. We'll be in touch shortly to confirm your stay at Damir Hotel.</p>
       <button class="btn btn--ghost" data-modal-close style="margin-top:.6rem">Close</button>
+    </div>
+    <div class="form-error">
+      <p>Couldn't send your inquiry — please email us directly at <a data-h="email" href="mailto:damirhotel@gmail.com">damirhotel@gmail.com</a></p>
     </div>
   </div>
 </div>

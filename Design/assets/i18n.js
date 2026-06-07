@@ -35,7 +35,6 @@
     'Our story': 'Наша история',
     'The house': 'Отель',
     'Four reasons to settle in': 'Четыре причины остановиться',
-    'Rooms & Suites': 'Номера и люксы',
     'Twin, double or twin, triple and suite layouts — each with air conditioning, private bathroom, city view and free Wi-Fi.': 'Номера twin, double/twin, triple и suite — в каждом кондиционер, отдельная ванная, вид на город и бесплатный Wi-Fi.',
     'View rooms': 'Номера',
     'Breakfast & Dining': 'Завтрак и ресторан',
@@ -177,7 +176,6 @@
     'Well-placed, easily reached.': 'Удобное расположение и простой приезд.',
     'Damir Hotel sits within easy reach of Nukus\'s key connections, with secure on-site parking and an airport shuttle available on request. Whether you\'re here for business, museum visits or a short stay between trips, arrival is simple.': 'Damir Hotel удобно расположен в Нукусе, с частной парковкой и трансфером из аэропорта по запросу. Для работы, музеев или короткой остановки — добраться легко.',
     'Directions & contact': 'Маршрут и контакты',
-    'Breakfast & Dining': 'Завтрак и ресторан',
     'A breakfast': 'Завтрак,',
     'worth waking for.': 'ради которого стоит проснуться.',
     'The morning table': 'Утренний стол',
@@ -511,7 +509,7 @@
   }
 
   function translateAttributes(dict) {
-    doc.querySelectorAll('[placeholder], [aria-label], [alt], title').forEach(function (el) {
+    doc.querySelectorAll('[placeholder], [aria-label], [alt], [title]').forEach(function (el) {
       ['placeholder', 'aria-label', 'alt', 'title'].forEach(function (attr) {
         if (!el.hasAttribute(attr)) return;
         var original = getOriginalAttr(el, attr);
