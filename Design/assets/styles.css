@@ -1,6 +1,6 @@
 /* ============================================================
-   DAMIR HOTEL — Design System
-   Warm-neutral quiet luxury. Classic serif + quiet sans.
+   IDEAL HOTEL — Design System
+   Contemporary luxury. Bold serif + clean sans.
    ============================================================ */
 
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Mulish:wght@300;400;500;600;700&display=swap');
@@ -15,12 +15,21 @@
   --muted:      #8C8474;
   --line:       rgba(38,35,30,0.13);
   --line-soft:  rgba(38,35,30,0.07);
-  --gold:       #A9824A;
-  --gold-2:     #C0A06A;
-  --walnut:     #4A3B2A;
-  --walnut-2:   #5E4B36;
+  --gold:       #A87926;
+  --gold-2:     #C2983E;
+  --walnut:     #0C0906;
+  --walnut-2:   #1A1410;
   --sand:       #E7DECB;
   --sand-deep:  #DBCEB4;
+
+  /* dark hero palette */
+  --walnut-dark:   #1c1410;
+  --walnut-deep:   #16100d;
+  --amber:         #d4a96a;
+  --amber-dim:     rgba(212,169,106,0.5);
+  --cream-dk:      #f5ede0;
+  --muted-dk:      rgba(245,237,224,0.52);
+  --line-dk:       rgba(255,255,255,0.08);
 
   /* type */
   --serif: "Cormorant Garamond", Georgia, serif;
@@ -30,7 +39,7 @@
   --container: 1280px;
   --gutter: clamp(1.25rem, 5vw, 4rem);
   --section-y: clamp(4.5rem, 9vw, 8.5rem);
-  --radius: 3px;
+  --radius: 2px;
   --header-h: 84px;
 
   /* motion */
@@ -150,14 +159,14 @@ em{ font-style:italic; }
 .brand{ display:inline-flex; align-items:center; gap:.7rem; }
 .brand-mark{
   width:42px; height:42px; flex:none; position:relative;
-  border:1px solid var(--gold); border-radius:50%;
   display:grid; place-items:center;
   font-family:var(--serif); font-weight:600; font-size:1.42rem; line-height:1;
   color:var(--gold);
 }
 .brand-mark::before{
-  content:""; position:absolute; top:-4px; left:50%; transform:translateX(-50%) rotate(45deg);
-  width:6px; height:6px; background:var(--gold);
+  content:""; position:absolute; inset:6px;
+  border:1px solid var(--gold);
+  transform:rotate(45deg);
 }
 .brand-text{ display:flex; flex-direction:column; line-height:1; }
 .brand-name{ font-family:var(--serif); font-weight:600; font-size:1.32rem; letter-spacing:.16em; color:var(--ink); }
@@ -171,8 +180,8 @@ em{ font-style:italic; }
 .site-header.theme-light:not(.is-solid) .header-cta.btn--ghost{ color:var(--cream); border-color:rgba(246,241,231,0.45); }
 .site-header.theme-light:not(.is-solid) .header-cta.btn--ghost:hover{ background:var(--cream); color:var(--ink); }
 .site-header.theme-light:not(.is-solid) .nav-toggle span{ background:var(--cream); }
-.site-header.theme-light:not(.is-solid) .brand-mark{ border-color:var(--cream); color:var(--cream); }
-.site-header.theme-light:not(.is-solid) .brand-mark::before{ background:var(--cream); }
+.site-header.theme-light:not(.is-solid) .brand-mark{ color:var(--cream); }
+.site-header.theme-light:not(.is-solid) .brand-mark::before{ border-color:var(--cream); }
 
 .main-nav{ display:flex; align-items:center; gap:1.75rem; }
 .nav-link{
@@ -187,6 +196,11 @@ em{ font-style:italic; }
 .nav-link:hover::after,.nav-link.is-active::after{ transform:scaleX(1); }
 .nav-link.is-active{ color:var(--ink); }
 .theme-light:not(.is-solid) .nav-link.is-active{ color:var(--cream); }
+/* when the hero-page header scrolls to solid, revert brand to dark-on-cream */
+.site-header.theme-light.is-solid .brand-name{ color:var(--ink); }
+.site-header.theme-light.is-solid .brand-sub{ color:var(--muted); }
+.site-header.theme-light.is-solid .brand-mark{ color:var(--gold); }
+.site-header.theme-light.is-solid .brand-mark::before{ border-color:var(--gold); }
 
 .header-right{ display:flex; align-items:center; gap:1.3rem; }
 .header-cta{ padding:.78rem 1.5rem; }
@@ -295,10 +309,6 @@ body.nav-open .mobile-menu a:nth-child(7){ transition-delay:.38s; }
 .split-media img{ width:100%; height:100%; object-fit:cover; border-radius:var(--radius); }
 .split-media.tall img{ aspect-ratio:4/5; }
 .media-tag{ position:absolute; left:1.4rem; bottom:1.4rem; background:var(--paper); color:var(--ink); padding:.55rem 1.1rem; font-size:.7rem; letter-spacing:.16em; text-transform:uppercase; font-weight:600; }
-
-/* feature image with caption frame */
-.framed{ position:relative; }
-.framed::after{ content:""; position:absolute; inset:14px; border:1px solid rgba(246,241,231,0.5); pointer-events:none; }
 
 /* ---------- highlight cards ---------- */
 .hcard{ padding:2.2rem 0 0; border-top:1px solid var(--line); }
@@ -501,8 +511,29 @@ body.nav-open .mobile-menu a:nth-child(7){ transition-delay:.38s; }
   .gal-grid{ columns:2; }
 }
 @media (max-width:880px){
-  .main-nav,.header-right .header-cta{ display:none; }
+  :root{ --header-h:120px; }
+  .site-header{ height:auto; }
+  .site-header .container{ flex-wrap:wrap; padding-block:0; }
+  .brand{ padding-block:1.1rem; }
+  .header-right{ padding-block:1.1rem; }
+  .header-right .header-cta{ display:none; }
   .nav-toggle{ display:block; }
+  /* scrollable nav strip below the logo row */
+  .main-nav{
+    display:flex;
+    order:10;
+    flex:0 0 100%;
+    overflow-x:auto;
+    scrollbar-width:none;
+    gap:0;
+    border-top:1px solid var(--line-soft);
+    margin-inline:calc(-1 * var(--gutter));
+    padding-inline:var(--gutter);
+    padding-block:.55rem;
+  }
+  .main-nav::-webkit-scrollbar{ display:none; }
+  .main-nav .nav-link{ flex-shrink:0; font-size:.73rem; padding:.45rem .85rem; white-space:nowrap; }
+  .site-header.theme-light:not(.is-solid) .main-nav{ border-top-color:rgba(246,241,231,0.18); }
   .grid-3,.grid-4{ grid-template-columns:repeat(2,1fr); }
   .split{ grid-template-columns:1fr; gap:2.2rem; }
   .split.reverse .split-media{ order:0; }
@@ -515,9 +546,24 @@ body.nav-open .mobile-menu a:nth-child(7){ transition-delay:.38s; }
   body{ font-size:16px; }
   .grid-2,.grid-3,.grid-4{ grid-template-columns:1fr; }
   .booking-card{ grid-template-columns:1fr; }
-  .bf{ border-right:0; border-bottom:1px solid var(--line-soft); }
+  .bf{ border-right:0; border-bottom:1px solid var(--line-soft); padding:.9rem 1.1rem; }
   .gal-grid{ columns:1; }
   .form-row{ grid-template-columns:1fr; }
   .footer-top{ grid-template-columns:1fr; }
   .hero-actions .btn{ flex:1; }
+
+  /* stats labels — prevent 2-line wraps on narrow columns */
+  .fact .l{ font-size:.6rem; letter-spacing:.1em; }
+
+  /* section-header row with inline button — force button full-width */
+  .sec-head > a.btn{ width:100%; justify-content:center; }
+
+  /* CTA quote — explicit <br> creates an odd 3-line split on mobile */
+  .cta-inner h2 br{ display:none; }
+
+  /* amenity items — tighten oversized vertical padding */
+  .amenity{ padding:.9rem 0; }
+
+  /* hero sub — slight size reduction keeps it comfortable */
+  .hero-sub{ font-size:1.05rem; }
 }
