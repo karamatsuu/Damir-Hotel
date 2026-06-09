@@ -75,10 +75,8 @@
   /* ---- header scroll state ---- */
   var header = doc.querySelector('.site-header');
   if (header) {
-    var solid = header.classList.contains('on-light');
     var onScroll = function () {
-      if (window.scrollY > 40) header.classList.add('is-solid');
-      else if (!solid) header.classList.remove('is-solid');
+      header.classList.toggle('is-solid', window.scrollY > 40);
     };
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
@@ -372,8 +370,6 @@
       if (e.key === 'ArrowRight') lbStep(1);
     });
   }
-  window.closeLightbox = closeLightbox;
-
   /* ============================================================
      ROOM DETAIL  — thumbnail gallery switch
      ============================================================ */
