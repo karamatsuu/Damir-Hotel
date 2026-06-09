@@ -581,14 +581,42 @@ body.nav-open .mobile-menu a:nth-child(7){ transition-delay:.38s; }
   .gal-grid{ columns:2; }
 }
 @media (max-width:880px){
+  /* nav: brand center + toggle only */
+  .site-header .container{
+    grid-template-columns:1fr auto;
+    gap:1rem;
+  }
+  .nav-left{ display:none; }
+  .nav-right .nav-link,
+  .nav-right .header-cta{ display:none; }
   .nav-toggle{ display:block; }
-  .nav-left,.nav-right{ display:none; }
+
+  /* hero-split stacks vertically */
+  .hero-split{
+    grid-template-columns:1fr;
+    min-height:auto;
+  }
+  .hero-split-left{
+    padding-top:calc(var(--header-h) + 2.5rem);
+    padding-bottom:3rem;
+  }
+  .hero-split-left::after{ display:none; }
+  .hero-split-right{
+    aspect-ratio:4/3;
+    min-height:260px;
+  }
+
+  /* grids */
   .grid-3,.grid-4{ grid-template-columns:repeat(2,1fr); }
   .split{ grid-template-columns:1fr; gap:2.2rem; }
   .split.reverse .split-media{ order:0; }
+
+  /* booking bar */
   .booking-card{ grid-template-columns:1fr 1fr; }
   .booking-submit{ grid-column:1 / -1; }
   .booking-submit .btn{ width:100%; padding-block:1.1rem; }
+
+  /* stats */
   .facts{ grid-template-columns:repeat(2,1fr); gap:2.4rem; }
 }
 @media (max-width:560px){
@@ -599,20 +627,9 @@ body.nav-open .mobile-menu a:nth-child(7){ transition-delay:.38s; }
   .gal-grid{ columns:1; }
   .form-row{ grid-template-columns:1fr; }
   .footer-top{ grid-template-columns:1fr; }
-  .hero-actions .btn{ flex:1; }
-
-  /* stats labels — prevent 2-line wraps on narrow columns */
+  .hero-split h1{ font-size:clamp(2.2rem,8vw,3.2rem); }
   .fact .l{ font-size:.6rem; letter-spacing:.1em; }
-
-  /* section-header row with inline button — force button full-width */
   .sec-head > a.btn{ width:100%; justify-content:center; }
-
-  /* CTA quote — explicit <br> creates an odd 3-line split on mobile */
   .cta-inner h2 br{ display:none; }
-
-  /* amenity items — tighten oversized vertical padding */
   .amenity{ padding:.9rem 0; }
-
-  /* hero sub — slight size reduction keeps it comfortable */
-  .hero-sub{ font-size:1.05rem; }
 }
