@@ -1,0 +1,211 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - navigation [ref=e4]:
+        - link "Rooms" [ref=e5] [cursor=pointer]:
+          - /url: rooms.html
+        - link "Dining" [ref=e6] [cursor=pointer]:
+          - /url: dining.html
+        - link "Gallery" [ref=e7] [cursor=pointer]:
+          - /url: gallery.html
+      - link "IDEAL Hotel home" [ref=e8] [cursor=pointer]:
+        - /url: index.html
+        - text: IDEAL · HOTEL
+      - generic [ref=e9]:
+        - link "About" [ref=e10] [cursor=pointer]:
+          - /url: about.html
+        - link "Contact" [ref=e11] [cursor=pointer]:
+          - /url: contact.html
+        - link "Book a stay" [ref=e12] [cursor=pointer]:
+          - /url: "#"
+  - generic [ref=e13]:
+    - img "IDEAL Hotel lobby" [ref=e15]
+    - generic [ref=e16]:
+      - paragraph [ref=e17]: Contact
+      - heading "We would love to host you." [level=1] [ref=e18]:
+        - text: We would love
+        - text: to host you.
+  - generic [ref=e21]:
+    - generic [ref=e22]:
+      - paragraph [ref=e23]: Reach us
+      - heading "Get in touch" [level=2] [ref=e25]
+      - generic [ref=e26]:
+        - generic [ref=e27]: Address
+        - generic [ref=e28]: ул. А. Досназарова, 100А, 230100 Nukus
+      - generic [ref=e29]:
+        - generic [ref=e30]: Telephone
+        - link "+998 61 222 33 44" [ref=e32] [cursor=pointer]:
+          - /url: tel:+998612223344
+      - generic [ref=e33]:
+        - generic [ref=e34]: Email
+        - link "info@idealhotel.uz" [ref=e36] [cursor=pointer]:
+          - /url: mailto:info@idealhotel.uz
+      - generic [ref=e37]:
+        - generic [ref=e38]: Reception
+        - generic [ref=e39]: Open 24 hours
+      - generic [ref=e40]:
+        - generic [ref=e41]:
+          - generic [ref=e43]: ул. А. Досназарова, 100А, Nukus
+          - generic [ref=e44]: IDEAL Hotel
+        - iframe [ref=e45]:
+          - link "Open in Maps (opens in new tab)" [ref=f1e4] [cursor=pointer]:
+            - /url: about:invalid#zClosurez
+            - text: Open in Maps
+            - img [ref=f1e6]
+      - link "Open in Google Maps" [ref=e46] [cursor=pointer]:
+        - /url: https://maps.google.com/?q=ул.+А.+Досназарова+100А+Nukus+Uzbekistan
+        - text: Open in Google Maps
+        - img [ref=e47]
+    - generic [ref=e49]:
+      - paragraph [ref=e50]: Reservation inquiry
+      - heading "Request a stay" [level=2] [ref=e52]
+      - generic [ref=e54]:
+        - generic [ref=e55]:
+          - generic [ref=e56]:
+            - generic [ref=e57]: First & last name
+            - textbox "First & last name" [ref=e58]:
+              - /placeholder: Your name
+          - generic [ref=e59]:
+            - generic [ref=e60]: Email
+            - textbox "Email" [ref=e61]:
+              - /placeholder: you@email.com
+        - generic [ref=e62]:
+          - generic [ref=e63]:
+            - generic [ref=e64]: Phone
+            - textbox "Phone" [ref=e65]:
+              - /placeholder: Optional
+          - generic [ref=e66]:
+            - generic [ref=e67]: Guests
+            - combobox "Guests" [ref=e68]:
+              - option "1 guest"
+              - option "2 guests" [selected]
+              - option "3 guests"
+              - option "4 guests"
+        - generic [ref=e69]:
+          - generic [ref=e70]:
+            - generic [ref=e71]: Check-in
+            - textbox "Check-in" [ref=e72]: 2026-06-17
+          - generic [ref=e73]:
+            - generic [ref=e74]: Check-out
+            - textbox "Check-out" [ref=e75]: 2026-06-18
+        - generic [ref=e76]:
+          - generic [ref=e77]: Room type
+          - combobox "Room type" [ref=e78]:
+            - option "No preference" [selected]
+            - option "Twin Room"
+            - option "Standard Suite"
+            - option "Family Room"
+            - option "Single Room"
+        - generic [ref=e79]:
+          - generic [ref=e80]: Message
+          - textbox "Message" [ref=e81]:
+            - /placeholder: Tell us about your stay…
+        - button "Send inquiry" [ref=e82] [cursor=pointer]
+  - generic [ref=e85]:
+    - generic [ref=e86]:
+      - paragraph [ref=e87]: Location
+      - heading "Central Nukus, easy arrival." [level=2] [ref=e89]
+      - list [ref=e90]:
+        - listitem [ref=e91]:
+          - generic [ref=e92]: Nukus Airport
+          - generic [ref=e93]: About 1.5 km
+        - listitem [ref=e94]:
+          - generic [ref=e95]: Nukus train station
+          - generic [ref=e96]: About 4.9 km
+        - listitem [ref=e97]:
+          - generic [ref=e98]: Savitsky Museum
+          - generic [ref=e99]: About 10 minutes on foot
+        - listitem [ref=e100]:
+          - generic [ref=e101]: Nearby
+          - generic [ref=e102]: Bazaar, river area, local dining
+    - generic [ref=e103]:
+      - paragraph [ref=e104]: House rules
+      - heading "Good to know before arrival." [level=2] [ref=e106]
+      - list [ref=e107]:
+        - listitem [ref=e108]:
+          - generic [ref=e109]: Check-in
+          - generic [ref=e110]: 14:00 – 15:00
+        - listitem [ref=e111]:
+          - generic [ref=e112]: Check-out
+          - generic [ref=e113]: 12:00 – 13:00
+        - listitem [ref=e114]:
+          - generic [ref=e115]: Children
+          - generic [ref=e116]: Welcome
+        - listitem [ref=e117]:
+          - generic [ref=e118]: Pets
+          - generic [ref=e119]: Not allowed
+        - listitem [ref=e120]:
+          - generic [ref=e121]: Parties/events
+          - generic [ref=e122]: Not permitted
+        - listitem [ref=e123]:
+          - generic [ref=e124]: Payment
+          - generic [ref=e125]: Visa, Mastercard, cash
+  - contentinfo [ref=e126]:
+    - generic [ref=e127]:
+      - generic [ref=e128]:
+        - generic [ref=e129]:
+          - link "IIDEALHOTEL" [ref=e130] [cursor=pointer]:
+            - /url: index.html
+            - text: I
+            - generic [ref=e131]: IDEALHOTEL
+          - paragraph [ref=e132]: A contemporary landmark of hospitality in Nukus, Karakalpakstan — crystal-lit interiors, marble finishes and attentive service, steps from the Savitsky Museum.
+        - generic [ref=e133]:
+          - heading "Explore" [level=5] [ref=e134]
+          - list [ref=e135]:
+            - listitem [ref=e136]:
+              - link "Rooms & Suites" [ref=e137] [cursor=pointer]:
+                - /url: rooms.html
+            - listitem [ref=e138]:
+              - link "Dining" [ref=e139] [cursor=pointer]:
+                - /url: dining.html
+            - listitem [ref=e140]:
+              - link "Gallery" [ref=e141] [cursor=pointer]:
+                - /url: gallery.html
+            - listitem [ref=e142]:
+              - link "About" [ref=e143] [cursor=pointer]:
+                - /url: about.html
+            - listitem [ref=e144]:
+              - link "Contact" [ref=e145] [cursor=pointer]:
+                - /url: contact.html
+        - generic [ref=e146]:
+          - heading "Stay" [level=5] [ref=e147]
+          - list [ref=e148]:
+            - listitem [ref=e149]:
+              - link "Book a stay" [ref=e150] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e151]:
+              - link "Rooms & Suites" [ref=e152] [cursor=pointer]:
+                - /url: rooms.html
+            - listitem [ref=e153]:
+              - link "Breakfast & Dining" [ref=e154] [cursor=pointer]:
+                - /url: dining.html
+            - listitem [ref=e155]:
+              - link "Directions" [ref=e156] [cursor=pointer]:
+                - /url: contact.html
+        - generic [ref=e157]:
+          - heading "Contact" [level=5] [ref=e158]
+          - list [ref=e159]:
+            - listitem [ref=e160]: ул. А. Досназарова, 100А, 230100 Nukus
+            - listitem [ref=e161]:
+              - link "+998 61 222 33 44" [ref=e162] [cursor=pointer]:
+                - /url: tel:+998612223344
+            - listitem [ref=e163]:
+              - link "info@idealhotel.uz" [ref=e164] [cursor=pointer]:
+                - /url: mailto:info@idealhotel.uz
+            - listitem [ref=e165]: Reception open 24 hours
+      - generic [ref=e166]:
+        - generic [ref=e167]: © 2026 IDEAL Hotel. All rights reserved.
+        - generic [ref=e168]:
+          - link "Instagram" [ref=e169] [cursor=pointer]:
+            - /url: https://www.instagram.com/idealhotel.nukus
+          - link "Telegram" [ref=e170] [cursor=pointer]:
+            - /url: https://t.me/idealhotelnukus
+  - option "1 guest"
+  - option "2 guests" [selected]
+  - option "3 guests"
+  - option "4 guests"
+  - option "No preference" [selected]
+  - option "Twin Room"
+  - option "Standard Suite"
+  - option "Family Room"
+  - option "Single Room"

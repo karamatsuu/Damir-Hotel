@@ -1,0 +1,322 @@
+- generic [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "IDEAL Hotel home" [ref=e8] [cursor=pointer]:
+        - /url: index.html
+        - text: IDEAL · HOTEL
+      - button "Open menu" [active] [ref=e292] [cursor=pointer]
+  - navigation [ref=e296]:
+    - link "Home" [ref=e297] [cursor=pointer]:
+      - /url: index.html
+    - link "Rooms & Suites" [ref=e298] [cursor=pointer]:
+      - /url: rooms.html
+    - link "Dining" [ref=e299] [cursor=pointer]:
+      - /url: dining.html
+    - link "Gallery" [ref=e300] [cursor=pointer]:
+      - /url: gallery.html
+    - link "About" [ref=e301] [cursor=pointer]:
+      - /url: about.html
+    - link "Contact" [ref=e302] [cursor=pointer]:
+      - /url: contact.html
+    - link "Book a stay" [ref=e303] [cursor=pointer]:
+      - /url: "#"
+  - button "Book a stay"
+  - generic [ref=e13]:
+    - generic [ref=e14]:
+      - paragraph [ref=e15]: Nukus · Karakalpakstan
+      - heading "Modern luxury, genuinely warm." [level=1] [ref=e16]:
+        - text: Modern luxury,
+        - text: genuinely warm.
+      - paragraph [ref=e17]: IDEAL Hotel brings crystal-lit interiors and marble finishes to the heart of Nukus — generous breakfasts, attentive service and a prime location near the Savitsky Museum.
+      - generic [ref=e18]:
+        - link "Book your stay" [ref=e19] [cursor=pointer]:
+          - /url: "#"
+        - link "Explore rooms" [ref=e20] [cursor=pointer]:
+          - /url: rooms.html
+    - img "A suite at IDEAL Hotel" [ref=e22]
+  - generic [ref=e24]:
+    - generic [ref=e25]:
+      - generic [ref=e26]: Check-in
+      - textbox [ref=e27]: 2026-06-17
+    - generic [ref=e28]:
+      - generic [ref=e29]: Check-out
+      - textbox [ref=e30]: 2026-06-19
+    - generic [ref=e31]:
+      - generic [ref=e32]: Guests
+      - combobox [ref=e33]:
+        - option "1 guest"
+        - option "2 guests" [selected]
+        - option "3 guests"
+        - option "4 guests"
+    - button "Check availability" [ref=e35] [cursor=pointer]
+  - generic [ref=e37]:
+    - generic [ref=e38]:
+      - paragraph [ref=e39]: Welcome to IDEAL
+      - heading "A modern landmark built around genuine hospitality." [level=2] [ref=e41]
+      - paragraph [ref=e42]: Crystal chandeliers, marble bathrooms and bold contemporary design — IDEAL Hotel sets a new standard for luxury in Nukus. Every room is made for comfort; every detail, for the guest.
+      - paragraph [ref=e43]: From a 24-hour welcome to a generous buffet breakfast, bar, fitness room and a central address near the Savitsky Museum, IDEAL Hotel makes every stay feel effortless.
+      - link "Our story" [ref=e44] [cursor=pointer]:
+        - /url: about.html
+        - text: Our story
+        - img [ref=e45]
+    - generic [ref=e47]:
+      - img "Lobby at IDEAL Hotel" [ref=e48]
+      - generic [ref=e49]: Est. — Nukus
+  - generic [ref=e51]:
+    - generic [ref=e52]:
+      - paragraph [ref=e53]: The house
+      - heading "Four reasons to settle in" [level=2] [ref=e54]
+    - generic [ref=e55]:
+      - generic [ref=e56]:
+        - text: "01"
+        - heading "Rooms & Suites" [level=3] [ref=e57]
+        - paragraph [ref=e58]: Twin, standard suite, single and triple layouts — each with air conditioning, private bathroom, city view and free Wi-Fi.
+        - link "View rooms" [ref=e59] [cursor=pointer]:
+          - /url: rooms.html
+          - text: View rooms
+          - img [ref=e60]
+      - generic [ref=e62]:
+        - text: "02"
+        - heading "Breakfast & Dining" [level=3] [ref=e63]
+        - paragraph [ref=e64]: A daily buffet with hot and cold choices, plus an on-site restaurant and minimarket for easy meals.
+        - link "See dining" [ref=e65] [cursor=pointer]:
+          - /url: dining.html
+          - text: See dining
+          - img [ref=e66]
+      - generic [ref=e68]:
+        - text: "03"
+        - heading "Spaces & Events" [level=3] [ref=e69]
+        - paragraph [ref=e70]: An elegant private room for meetings and gatherings, framed by greenery and warm light.
+        - link "Enquire" [ref=e71] [cursor=pointer]:
+          - /url: contact.html
+          - text: Enquire
+          - img [ref=e72]
+      - generic [ref=e74]:
+        - text: "04"
+        - heading "Location" [level=3] [ref=e75]
+        - paragraph [ref=e76]: At ул. А. Досназарова, 100А in Nukus, close to the Savitsky Museum, local bazaar and about 1.5 km from Nukus Airport.
+        - link "Directions" [ref=e77] [cursor=pointer]:
+          - /url: contact.html
+          - text: Directions
+          - img [ref=e78]
+  - generic [ref=e82]:
+    - generic [ref=e83]:
+      - generic [ref=e84]: "9.2"
+      - generic [ref=e85]: Guest rating
+    - generic [ref=e86]:
+      - generic [ref=e87]: "9.1"
+      - generic [ref=e88]: Couples score
+    - generic [ref=e89]:
+      - generic [ref=e90]: "8.9"
+      - generic [ref=e91]: Facilities score
+    - generic [ref=e92]:
+      - generic [ref=e93]: 1.5 km
+      - generic [ref=e94]: To Nukus Airport
+  - generic [ref=e96]:
+    - generic [ref=e97]:
+      - generic [ref=e98]:
+        - paragraph [ref=e99]: Where you'll stay
+        - heading "Rooms made for rest" [level=2] [ref=e101]
+      - link "All rooms & suites" [ref=e102] [cursor=pointer]:
+        - /url: rooms.html
+    - generic [ref=e103]:
+      - article [ref=e104]:
+        - link "Twin Room $85 / night UZS 1,079,759" [ref=e105] [cursor=pointer]:
+          - /url: room.html?id=twin
+          - img "Twin Room" [ref=e106]
+          - generic [ref=e107]:
+            - text: $85 / night
+            - emphasis [ref=e108]: UZS 1,079,759
+        - generic [ref=e109]:
+          - heading "Twin Room" [level=3] [ref=e110]
+          - paragraph [ref=e111]: Two comfortable single beds with city views, a full bathroom with bathrobe and slippers, and a dining area.
+          - generic [ref=e112]:
+            - generic [ref=e113]:
+              - img [ref=e114]
+              - text: 30 m²
+            - generic [ref=e116]:
+              - img [ref=e117]
+              - text: Two single beds
+            - generic [ref=e119]:
+              - img [ref=e120]
+              - text: Up to 2 guests
+          - generic [ref=e123]:
+            - link "View room" [ref=e124] [cursor=pointer]:
+              - /url: room.html?id=twin
+              - text: View room
+              - img [ref=e125]
+            - button "Book" [ref=e127] [cursor=pointer]
+      - article [ref=e128]:
+        - link "Standard Suite $118 / night UZS 1,499,665" [ref=e129] [cursor=pointer]:
+          - /url: room.html?id=suite
+          - img "Standard Suite" [ref=e130]
+          - generic [ref=e131]:
+            - text: $118 / night
+            - emphasis [ref=e132]: UZS 1,499,665
+        - generic [ref=e133]:
+          - heading "Standard Suite" [level=3] [ref=e134]
+          - paragraph [ref=e135]: A generous 32 m² suite with a large double bed, full bathroom with bathrobe and slippers, and a dining area.
+          - generic [ref=e136]:
+            - generic [ref=e137]:
+              - img [ref=e138]
+              - text: 32 m²
+            - generic [ref=e140]:
+              - img [ref=e141]
+              - text: One large double bed
+            - generic [ref=e143]:
+              - img [ref=e144]
+              - text: Up to 2 guests
+          - generic [ref=e147]:
+            - link "View room" [ref=e148] [cursor=pointer]:
+              - /url: room.html?id=suite
+              - text: View room
+              - img [ref=e149]
+            - button "Book" [ref=e151] [cursor=pointer]
+      - article [ref=e152]:
+        - link "Single Room $57 / night UZS 719,839" [ref=e153] [cursor=pointer]:
+          - /url: room.html?id=single
+          - img "Single Room" [ref=e154]
+          - generic [ref=e155]:
+            - text: $57 / night
+            - emphasis [ref=e156]: UZS 719,839
+        - generic [ref=e157]:
+          - heading "Single Room" [level=3] [ref=e158]
+          - paragraph [ref=e159]: A well-appointed 26 m² single room with a private bathroom including bathrobe, slippers and hairdryer.
+          - generic [ref=e160]:
+            - generic [ref=e161]:
+              - img [ref=e162]
+              - text: 26 m²
+            - generic [ref=e164]:
+              - img [ref=e165]
+              - text: One single bed
+            - generic [ref=e167]:
+              - img [ref=e168]
+              - text: 1 guest
+          - generic [ref=e171]:
+            - link "View room" [ref=e172] [cursor=pointer]:
+              - /url: room.html?id=single
+              - text: View room
+              - img [ref=e173]
+            - button "Book" [ref=e175] [cursor=pointer]
+  - generic [ref=e177]:
+    - generic [ref=e178]:
+      - paragraph [ref=e179]: In every stay
+      - heading "The comforts, included" [level=2] [ref=e180]
+    - generic [ref=e181]:
+      - generic [ref=e182]:
+        - img [ref=e184]
+        - heading "Free Wi-Fi" [level=4] [ref=e187]
+        - paragraph [ref=e188]: Complimentary high-speed internet throughout the hotel and in every room.
+      - generic [ref=e189]:
+        - img [ref=e191]
+        - heading "Breakfast included" [level=4] [ref=e193]
+        - paragraph [ref=e194]: Continental, vegetarian and buffet breakfast served daily with every stay.
+      - generic [ref=e195]:
+        - img [ref=e197]
+        - heading "Bar & coffee house" [level=4] [ref=e199]
+        - paragraph [ref=e200]: On-site bar and coffee house for drinks and light bites throughout the day.
+      - generic [ref=e201]:
+        - img [ref=e203]
+        - heading "Free airport shuttle" [level=4] [ref=e206]
+        - paragraph [ref=e207]: Complimentary shuttle to and from Nukus Airport — 1.5 km away.
+      - generic [ref=e208]:
+        - img [ref=e210]
+        - heading "Fitness & billiards" [level=4] [ref=e212]
+        - paragraph [ref=e213]: On-site fitness room, billiards, and a garden for guests to enjoy.
+      - generic [ref=e214]:
+        - img [ref=e216]
+        - heading "24-hour front desk" [level=4] [ref=e219]
+        - paragraph [ref=e220]: Private check-in/check-out, concierge, luggage storage and currency exchange.
+  - generic [ref=e221]:
+    - img "A quiet corridor at IDEAL Hotel" [ref=e223]
+    - generic [ref=e224]:
+      - paragraph [ref=e225]: A quieter kind of stay
+      - heading "“The luxury is in the calm — and the calm is everywhere.”" [level=2] [ref=e226]
+  - generic [ref=e229]:
+    - generic [ref=e230]: “
+    - blockquote [ref=e231]: New hotel, modern and clean, very central. Great location near the Art Museum. They arranged a taxi trip to Moynaq for me.
+    - generic [ref=e232]: Duncan — United Kingdom
+    - generic [ref=e233]:
+      - button [ref=e234] [cursor=pointer]
+      - button [ref=e235] [cursor=pointer]
+      - button [ref=e236] [cursor=pointer]
+  - generic [ref=e237]:
+    - img "IDEAL Hotel lobby" [ref=e239]
+    - generic [ref=e240]:
+      - paragraph [ref=e241]: Reserve your room
+      - heading "Your quiet retreat is ready when you are." [level=2] [ref=e242]
+      - paragraph [ref=e243]: Tell us your dates and we'll take care of the rest. No payment now — just a friendly confirmation from our team.
+      - link "Book your stay" [ref=e244] [cursor=pointer]:
+        - /url: "#"
+  - contentinfo [ref=e245]:
+    - generic [ref=e246]:
+      - generic [ref=e247]:
+        - generic [ref=e248]:
+          - link "I IDEALHOTEL" [ref=e249] [cursor=pointer]:
+            - /url: index.html
+            - text: I
+            - generic [ref=e250]: IDEALHOTEL
+          - paragraph [ref=e251]: A contemporary landmark of hospitality in Nukus, Karakalpakstan — crystal-lit interiors, marble finishes and attentive service, steps from the Savitsky Museum.
+        - generic [ref=e252]:
+          - heading "Explore" [level=5] [ref=e253]
+          - list [ref=e254]:
+            - listitem [ref=e255]:
+              - link "Rooms & Suites" [ref=e256] [cursor=pointer]:
+                - /url: rooms.html
+            - listitem [ref=e257]:
+              - link "Dining" [ref=e258] [cursor=pointer]:
+                - /url: dining.html
+            - listitem [ref=e259]:
+              - link "Gallery" [ref=e260] [cursor=pointer]:
+                - /url: gallery.html
+            - listitem [ref=e261]:
+              - link "About" [ref=e262] [cursor=pointer]:
+                - /url: about.html
+            - listitem [ref=e263]:
+              - link "Contact" [ref=e264] [cursor=pointer]:
+                - /url: contact.html
+        - generic [ref=e265]:
+          - heading "Stay" [level=5] [ref=e266]
+          - list [ref=e267]:
+            - listitem [ref=e268]:
+              - link "Book a stay" [ref=e269] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e270]:
+              - link "Rooms & Suites" [ref=e271] [cursor=pointer]:
+                - /url: rooms.html
+            - listitem [ref=e272]:
+              - link "Breakfast & Dining" [ref=e273] [cursor=pointer]:
+                - /url: dining.html
+            - listitem [ref=e274]:
+              - link "Directions" [ref=e275] [cursor=pointer]:
+                - /url: contact.html
+        - generic [ref=e276]:
+          - heading "Contact" [level=5] [ref=e277]
+          - list [ref=e278]:
+            - listitem [ref=e279]: ул. А. Досназарова, 100А, 230100 Nukus
+            - listitem [ref=e280]:
+              - link "+998 61 222 33 44" [ref=e281] [cursor=pointer]:
+                - /url: tel:+998612223344
+            - listitem [ref=e282]:
+              - link "info@idealhotel.uz" [ref=e283] [cursor=pointer]:
+                - /url: mailto:info@idealhotel.uz
+            - listitem [ref=e284]:
+              - link "WhatsApp" [ref=e285] [cursor=pointer]:
+                - /url: https://wa.me/998612223344
+            - listitem [ref=e286]: Reception open 24 hours
+      - generic [ref=e287]:
+        - generic [ref=e288]: © 2026 IDEAL Hotel. All rights reserved.
+        - generic [ref=e289]:
+          - link "Instagram" [ref=e290] [cursor=pointer]:
+            - /url: https://www.instagram.com/idealhotel.nukus
+          - link "Telegram" [ref=e291] [cursor=pointer]:
+            - /url: https://t.me/idealhotelnukus
+  - option "1 guest"
+  - option "2 guests" [selected]
+  - option "3 guests"
+  - option "4 guests"
+  - option "No preference" [selected]
+  - option "Twin Room"
+  - option "Standard Suite"
+  - option "Family Room"
+  - option "Single Room"

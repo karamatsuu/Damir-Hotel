@@ -1,0 +1,185 @@
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #111; color: #eee; font-family: system-ui, sans-serif; padding: 2rem; }
+  h2 { font-size: 1.4rem; font-weight: 400; color: #fff; margin-bottom: .4rem; }
+  .subtitle { color: #888; font-size: .9rem; margin-bottom: 2rem; }
+  .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .card { border: 1px solid #333; border-radius: 6px; overflow: hidden; cursor: pointer; transition: border-color .2s, transform .15s; }
+  .card:hover { border-color: #666; transform: translateY(-2px); }
+  .card.selected { border-color: #d4a96a; box-shadow: 0 0 0 2px #d4a96a40; }
+  .card-body { padding: 1rem 1.2rem 1.2rem; background: #1a1a1a; }
+  .card-name { font-size: .85rem; color: #fff; font-weight: 500; margin-bottom: .3rem; }
+  .card-desc { font-size: .78rem; color: #777; line-height: 1.5; }
+  .card-tags { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: .7rem; }
+  .tag { font-size: .62rem; padding: .22rem .55rem; border: 1px solid #333; border-radius: 3px; color: #666; }
+
+  /* Shared nav for all heroes */
+  .mock-nav {
+    position: absolute; top: 0; left: 0; right: 0; z-index: 10;
+    display: flex; align-items: center; justify-content: center; gap: 2rem;
+    padding: .9rem 1.5rem;
+    border-bottom: 1px solid rgba(255,255,255,.08);
+    background: rgba(28,20,16,.55);
+    backdrop-filter: blur(10px);
+    font-size: .55rem; letter-spacing: .22em; color: rgba(255,255,255,.42); text-transform: uppercase;
+  }
+  .mock-nav .logo { color: #d4a96a; font-size: .62rem; letter-spacing: .3em; }
+
+  /* A — Full-bleed photo, text bottom-left */
+  .hero-a {
+    position: relative; height: 260px; overflow: hidden;
+    background: #1c1410;
+  }
+  .hero-a::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: url('https://images.unsplash.com/photo-1549638441-b787d2e11f14?w=800&q=60') center/cover;
+    opacity: .32; filter: sepia(25%);
+  }
+  .hero-a::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(20,14,10,.9) 0%, rgba(20,14,10,.1) 55%, transparent 100%);
+  }
+  .hero-a-body { position: absolute; bottom: 1.4rem; left: 1.5rem; right: 40%; z-index: 2; }
+  .eyebrow { font-size: .54rem; letter-spacing: .3em; color: #d4a96a; text-transform: uppercase; display: block; margin-bottom: .5rem; }
+  .title-serif { font-family: Georgia, serif; color: #f5ede0; font-weight: 400; line-height: 1.1; }
+  .hero-a-body .title-serif { font-size: 1.9rem; }
+  .hero-a-scroll { position: absolute; bottom: 1.4rem; right: 1.5rem; z-index: 2; display: flex; flex-direction: column; align-items: center; gap: .4rem; }
+  .hero-a-scroll span { font-size: .5rem; letter-spacing: .2em; color: rgba(255,255,255,.3); text-transform: uppercase; }
+  .hero-a-scroll .vline { width: 1px; height: 28px; background: rgba(255,255,255,.2); }
+
+  /* B — Split: text left, photo right */
+  .hero-b {
+    position: relative; height: 260px; display: flex; overflow: hidden;
+    background: #1c1410;
+  }
+  .hero-b-left {
+    width: 46%; padding: 3.5rem 1.5rem 1.5rem;
+    display: flex; flex-direction: column; justify-content: flex-end;
+    position: relative; z-index: 2;
+  }
+  .hero-b-left .title-serif { font-size: 1.55rem; }
+  .hero-b-left .eyebrow { margin-bottom: .4rem; }
+  .hero-b-left p { font-size: .65rem; color: rgba(245,237,224,.5); margin-top: .6rem; line-height: 1.5; }
+  .hero-b-left a { display: inline-block; margin-top: .8rem; font-size: .55rem; letter-spacing: .22em; color: #d4a96a; text-transform: uppercase; border-bottom: 1px solid rgba(212,169,106,.35); padding-bottom: .15rem; }
+  .hero-b-right {
+    flex: 1;
+    position: relative;
+  }
+  .hero-b-right::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: url('https://images.unsplash.com/photo-1560185893-a55cbc8c57e8?w=600&q=60') center/cover;
+    filter: sepia(20%);
+    opacity: .7;
+  }
+  .hero-b-right::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(to right, #1c1410 0%, transparent 30%);
+  }
+  .hero-b-tag {
+    position: absolute; bottom: 1rem; right: 1rem; z-index: 2;
+    font-size: .52rem; letter-spacing: .18em; color: rgba(245,237,224,.4); text-transform: uppercase;
+  }
+
+  /* C — Oversized type over full photo, centered */
+  .hero-c {
+    position: relative; height: 260px; overflow: hidden;
+    background: #0e0a08;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .hero-c::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&q=60') center/cover;
+    opacity: .18; filter: sepia(40%);
+  }
+  .hero-c::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at center, transparent 30%, rgba(14,10,8,.7) 100%);
+  }
+  .hero-c-body { position: relative; z-index: 2; text-align: center; }
+  .hero-c-body .eyebrow { text-align: center; margin-bottom: .8rem; }
+  .hero-c-body .title-serif { font-size: 2.5rem; letter-spacing: -.01em; }
+  .hero-c-rule { width: 36px; height: 1px; background: #d4a96a; margin: 1rem auto 0; }
+</style>
+
+<h2>How should the hero section be laid out?</h2>
+<p class="subtitle">All use the centered blur nav (B) and warm dark palette (C).</p>
+
+<div class="cards">
+
+  <!-- A: Full-bleed photo, text bottom-left -->
+  <div class="card" data-choice="a" onclick="toggleSelect(this)">
+    <div class="hero-a">
+      <nav class="mock-nav">
+        <span>Rooms</span><span>Dining</span>
+        <span class="logo">IDEAL</span>
+        <span>Gallery</span><span>Contact</span>
+      </nav>
+      <div class="hero-a-body">
+        <span class="eyebrow">Nukus, Karakalpakstan</span>
+        <div class="title-serif">A quiet place<br>worth returning to.</div>
+      </div>
+      <div class="hero-a-scroll">
+        <span>Scroll</span>
+        <div class="vline"></div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="card-name">A — Full-bleed, text bottom-left</div>
+      <div class="card-desc">Photo fills the entire screen. Headline anchored bottom-left. Vertical scroll indicator on the right. Cinematic and immersive.</div>
+      <div class="card-tags"><span class="tag">Full-bleed</span><span class="tag">Bottom text</span><span class="tag">Scroll cue</span></div>
+    </div>
+  </div>
+
+  <!-- B: Split layout -->
+  <div class="card" data-choice="b" onclick="toggleSelect(this)">
+    <div class="hero-b">
+      <nav class="mock-nav" style="position:absolute;top:0;left:0;right:0">
+        <span>Rooms</span><span>Dining</span>
+        <span class="logo">IDEAL</span>
+        <span>Gallery</span><span>Contact</span>
+      </nav>
+      <div class="hero-b-left">
+        <span class="eyebrow">Nukus</span>
+        <div class="title-serif">Modern luxury,<br>genuinely warm.</div>
+        <p>Crystal-lit interiors and marble finishes in the heart of Nukus.</p>
+        <a>Book your stay →</a>
+      </div>
+      <div class="hero-b-right">
+        <span class="hero-b-tag">IDEAL Hotel</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="card-name">B — Split: text left, photo right</div>
+      <div class="card-desc">Left column has headline + tagline + CTA. Right side is a full-height photo. More structured and scannable.</div>
+      <div class="card-tags"><span class="tag">Split layout</span><span class="tag">CTA visible</span><span class="tag">Structured</span></div>
+    </div>
+  </div>
+
+  <!-- C: Centered oversized type -->
+  <div class="card" data-choice="c" onclick="toggleSelect(this)">
+    <div class="hero-c">
+      <nav class="mock-nav" style="position:absolute;top:0;left:0;right:0">
+        <span>Rooms</span><span>Dining</span>
+        <span class="logo">IDEAL</span>
+        <span>Gallery</span><span>Contact</span>
+      </nav>
+      <div class="hero-c-body">
+        <span class="eyebrow">Nukus · Karakalpakstan</span>
+        <div class="title-serif">Modern luxury,<br>genuinely warm.</div>
+        <div class="hero-c-rule"></div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="card-name">C — Centered, oversized type</div>
+      <div class="card-desc">Headline dominates the center of the screen over a dim photo. Architectural, dramatic, editorial — like a magazine cover.</div>
+      <div class="card-tags"><span class="tag">Centered</span><span class="tag">Oversized type</span><span class="tag">Editorial</span></div>
+    </div>
+  </div>
+
+</div>

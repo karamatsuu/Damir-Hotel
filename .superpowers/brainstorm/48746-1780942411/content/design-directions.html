@@ -1,0 +1,190 @@
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #111; color: #eee; font-family: system-ui, sans-serif; padding: 2rem; }
+  h2 { font-size: 1.4rem; font-weight: 400; color: #fff; margin-bottom: .4rem; letter-spacing: .04em; }
+  .subtitle { color: #888; font-size: .9rem; margin-bottom: 2rem; }
+
+  .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .card {
+    border: 1px solid #333;
+    border-radius: 6px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: border-color .2s, transform .2s;
+  }
+  .card:hover { border-color: #666; transform: translateY(-2px); }
+  .card.selected { border-color: #c9a84c; box-shadow: 0 0 0 2px #c9a84c40; }
+
+  /* HERO MOCKUP */
+  .hero-mock {
+    position: relative;
+    height: 260px;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    padding: 1.5rem;
+  }
+
+  /* Option A — Dark Cinematic */
+  .a-hero {
+    background: linear-gradient(160deg, #0a0a0a 0%, #1a1412 60%, #251c14 100%);
+  }
+  .a-hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&q=60') center/cover;
+    opacity: .28;
+  }
+  .a-nav {
+    position: absolute; top: 1rem; left: 1.5rem; right: 1.5rem;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .a-nav-logo { font-size: .65rem; letter-spacing: .35em; color: #fff; text-transform: uppercase; font-weight: 300; }
+  .a-nav-links { display: flex; gap: 1.4rem; }
+  .a-nav-links span { font-size: .6rem; letter-spacing: .2em; color: rgba(255,255,255,.55); text-transform: uppercase; }
+  .a-content { position: relative; z-index: 2; }
+  .a-eyebrow { font-size: .58rem; letter-spacing: .3em; color: #c9a84c; text-transform: uppercase; display: block; margin-bottom: .5rem; }
+  .a-title { font-family: "Georgia", serif; font-size: 2.1rem; font-weight: 400; color: #fff; line-height: 1.1; font-style: italic; }
+  .a-btn { display: inline-block; margin-top: .9rem; padding: .45rem 1.2rem; border: 1px solid rgba(255,255,255,.35); font-size: .6rem; letter-spacing: .2em; color: #fff; text-transform: uppercase; }
+
+  /* Option B — Stark Monochrome */
+  .b-hero { background: #000; }
+  .b-hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: url('https://images.unsplash.com/photo-1560185893-a55cbc8c57e8?w=800&q=60') center/cover;
+    opacity: .15;
+    filter: grayscale(100%);
+  }
+  .b-nav {
+    position: absolute; top: 1rem; left: 0; right: 0;
+    display: flex; justify-content: center; gap: 2.5rem; align-items: center;
+  }
+  .b-nav span { font-size: .6rem; letter-spacing: .25em; color: rgba(255,255,255,.4); text-transform: uppercase; }
+  .b-nav .b-logo { color: #fff; font-size: .7rem; font-weight: 600; letter-spacing: .15em; }
+  .b-content { position: relative; z-index: 2; width: 100%; }
+  .b-rule { width: 32px; height: 1px; background: #fff; margin-bottom: .8rem; }
+  .b-title { font-family: "Georgia", serif; font-size: 2.8rem; font-weight: 400; color: #fff; line-height: .95; text-transform: uppercase; letter-spacing: -.02em; }
+  .b-sub { font-size: .62rem; letter-spacing: .25em; color: rgba(255,255,255,.4); text-transform: uppercase; margin-top: .7rem; }
+
+  /* Option C — Earthy Warm Dark */
+  .c-hero { background: #1c1410; }
+  .c-hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: url('https://images.unsplash.com/photo-1549638441-b787d2e11f14?w=800&q=60') center/cover;
+    opacity: .22;
+    filter: sepia(40%);
+  }
+  .c-hero::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, #1c1410 30%, transparent 70%);
+  }
+  .c-nav {
+    position: absolute; top: 1rem; left: 1.5rem; right: 1.5rem;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .c-logo { font-size: .72rem; letter-spacing: .3em; color: #d4a96a; text-transform: uppercase; font-weight: 300; }
+  .c-nav-links { display: flex; gap: 1.2rem; }
+  .c-nav-links span { font-size: .58rem; color: rgba(255,255,255,.45); letter-spacing: .18em; text-transform: uppercase; }
+  .c-content { position: relative; z-index: 2; }
+  .c-tag { font-size: .58rem; letter-spacing: .28em; color: #d4a96a; text-transform: uppercase; display: block; margin-bottom: .6rem; }
+  .c-title { font-family: "Georgia", serif; font-size: 2rem; color: #f5ede0; line-height: 1.12; font-weight: 400; }
+  .c-line { width: 40px; height: 1px; background: #d4a96a; margin-top: .9rem; }
+
+  /* card bodies */
+  .card-body { padding: 1rem 1.2rem 1.2rem; background: #1a1a1a; }
+  .card-name { font-size: .85rem; color: #fff; font-weight: 500; margin-bottom: .3rem; }
+  .card-desc { font-size: .78rem; color: #777; line-height: 1.5; }
+  .card-tags { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: .7rem; }
+  .tag { font-size: .62rem; padding: .22rem .55rem; border: 1px solid #333; border-radius: 3px; color: #666; letter-spacing: .08em; }
+</style>
+
+<h2>Which design direction fits IDEAL Hotel?</h2>
+<p class="subtitle">Each option shows the homepage hero mood. Click to select your preference.</p>
+
+<div class="cards">
+
+  <!-- A: Dark Cinematic -->
+  <div class="card" data-choice="a" onclick="toggleSelect(this)">
+    <div class="hero-mock a-hero">
+      <div class="a-nav">
+        <span class="a-nav-logo">IDEAL HOTEL</span>
+        <div class="a-nav-links">
+          <span>Rooms</span><span>Dining</span><span>Gallery</span><span>Book</span>
+        </div>
+      </div>
+      <div class="a-content">
+        <span class="a-eyebrow">Nukus, Karakalpakstan</span>
+        <div class="a-title">Modern luxury,<br>genuinely warm.</div>
+        <span class="a-btn">Book your stay</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="card-name">A — Dark Cinematic</div>
+      <div class="card-desc">Near-black background, full-bleed photo overlay, italic serif headline, gold accents. Feels like a film still.</div>
+      <div class="card-tags">
+        <span class="tag">Dark bg</span>
+        <span class="tag">Serif italic</span>
+        <span class="tag">Gold</span>
+        <span class="tag">Transparent nav</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- B: Stark Monochrome -->
+  <div class="card" data-choice="b" onclick="toggleSelect(this)">
+    <div class="hero-mock b-hero">
+      <div class="b-nav">
+        <span>Rooms</span>
+        <span class="b-logo">IDEAL</span>
+        <span>Dining</span>
+        <span>Contact</span>
+      </div>
+      <div class="b-content">
+        <div class="b-rule"></div>
+        <div class="b-title">Modern<br>Luxury</div>
+        <div class="b-sub">Nukus · Karakalpakstan</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="card-name">B — Stark Monochrome</div>
+      <div class="card-desc">Pure black, centered nav, large uppercase serif display type. Minimal to the extreme — editorial magazine feel.</div>
+      <div class="card-tags">
+        <span class="tag">Black</span>
+        <span class="tag">Uppercase serif</span>
+        <span class="tag">Centered nav</span>
+        <span class="tag">Dramatic scale</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- C: Earthy Warm Dark -->
+  <div class="card" data-choice="c" onclick="toggleSelect(this)">
+    <div class="hero-mock c-hero">
+      <div class="c-nav">
+        <span class="c-logo">IDEAL HOTEL</span>
+        <div class="c-nav-links">
+          <span>Rooms</span><span>Dining</span><span>About</span><span>Contact</span>
+        </div>
+      </div>
+      <div class="c-content">
+        <span class="c-tag">Est. — Nukus</span>
+        <div class="c-title">A quiet place<br>worth returning to.</div>
+        <div class="c-line"></div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="card-name">C — Earthy Warm Dark</div>
+      <div class="card-desc">Dark warm background, sepia-tinted photography, amber/terracotta accents, horizontal rule motifs. Refined and grounded.</div>
+      <div class="card-tags">
+        <span class="tag">Warm dark</span>
+        <span class="tag">Sepia tone</span>
+        <span class="tag">Amber accents</span>
+        <span class="tag">Rule motifs</span>
+      </div>
+    </div>
+  </div>
+
+</div>

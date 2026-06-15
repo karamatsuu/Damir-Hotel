@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LLM Council — IDEAL Hotel sellability audit</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,sans-serif;background:#fff;color:#1a1a1a;max-width:820px;margin:0 auto;padding:2rem 1.5rem}
+.hdr{padding:1.5rem 0 1rem;border-bottom:1px solid #e5e5e5;margin-bottom:1.5rem}
+.eyebrow{font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:#888;margin-bottom:.4rem}
+h1{font-size:22px;font-weight:500;line-height:1.3;margin-bottom:.4rem}
+.hdr p{font-size:13px;color:#666}
+.section{margin-bottom:1.5rem}
+.section-title{font-size:13px;font-weight:500;color:#666;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.75rem;padding-bottom:.5rem;border-bottom:1px solid #e5e5e5}
+.one-thing{background:#fff;border:2px solid #2563eb;border-radius:12px;padding:1.25rem 1.5rem;margin-bottom:1.5rem}
+.one-thing h2{font-size:16px;font-weight:500;margin-bottom:.6rem;color:#1d4ed8}
+.one-thing p{font-size:14px;line-height:1.7;color:#555}
+.agree-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:.6rem;margin-bottom:1rem}
+.agree-card{background:#f8f8f8;border:1px solid #e5e5e5;border-radius:8px;padding:.8rem 1rem}
+.agree-card .num{font-size:22px;font-weight:500;color:#1d4ed8;display:block;margin-bottom:.2rem}
+.agree-card p{font-size:12px;color:#666;line-height:1.5}
+.fix-list{display:flex;flex-direction:column;gap:.5rem}
+.fix-item{background:#fff;border:1px solid #e5e5e5;border-radius:8px;padding:.75rem 1rem;display:flex;gap:.75rem;align-items:flex-start}
+.fix-badge{flex-shrink:0;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:500}
+.fix-badge.now{background:#fee2e2;color:#b91c1c}
+.fix-badge.month{background:#fef3c7;color:#92400e}
+.fix-badge.later{background:#f3f4f6;color:#6b7280}
+.fix-content .label{font-size:12px;font-weight:500;margin-bottom:.2rem}
+.fix-content p{font-size:12px;color:#666;line-height:1.5}
+.advisor-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:.6rem}
+.advisor-card{background:#fff;border:1px solid #e5e5e5;border-radius:8px;padding:.75rem 1rem}
+.advisor-name{font-size:12px;font-weight:500;margin-bottom:.2rem}
+.advisor-score{display:inline-block;font-size:11px;border-radius:999px;padding:2px 8px;margin-bottom:.4rem}
+.score-strong{background:#dcfce7;color:#166534}
+.score-weak{background:#fee2e2;color:#991b1b}
+.score-ok{background:#f3f4f6;color:#374151}
+.advisor-card p{font-size:11px;color:#666;line-height:1.5}
+.blind-card{background:#fffbeb;border:1px solid #fcd34d;border-radius:8px;padding:.75rem 1rem;margin-bottom:.5rem}
+.blind-card .btitle{font-size:13px;font-weight:500;color:#92400e;margin-bottom:.3rem}
+.blind-card p{font-size:12px;color:#78350f;line-height:1.5}
+.verdict-block{background:#f8f8f8;border-radius:12px;padding:1.25rem 1.5rem;margin-bottom:1rem}
+.verdict-block p{font-size:14px;line-height:1.7;color:#555}
+details{border:1px solid #e5e5e5;border-radius:8px;margin-bottom:.5rem;overflow:hidden}
+details summary{padding:.75rem 1rem;font-size:13px;font-weight:500;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;background:#fff}
+details .body{padding:.75rem 1rem;font-size:13px;line-height:1.7;color:#555;border-top:1px solid #e5e5e5;background:#f8f8f8}
+.footer{font-size:11px;color:#999;padding:1rem 0;border-top:1px solid #e5e5e5;margin-top:1.5rem}
+code{background:#f3f4f6;border-radius:4px;padding:1px 5px;font-size:12px;font-family:ui-monospace,monospace}
+</style>
+</head>
+<body>
+
+<div class="hdr">
+  <p class="eyebrow">LLM Council · 2026-06-16</p>
+  <h1>IDEAL Hotel — why the site isn't sellable yet</h1>
+  <p>5 advisors · 5 peer reviews · Chairman synthesis</p>
+</div>
+
+<div class="one-thing">
+  <h2>→ The one thing to do first</h2>
+  <p>Deploy <code>form-endpoint.gs</code> as a Google Apps Script Web App, copy the <code>/exec</code> URL, paste it into <code>formEndpoint</code> in <code>hotel.js</code>, and send a real test inquiry. The broken endpoint means this is a brochure, not a booking tool. Conversion rate: zero. Fix this before anything else.</p>
+</div>
+
+<div class="section">
+  <div class="section-title">Where the council agrees</div>
+  <div class="agree-grid">
+    <div class="agree-card"><span class="num">5/5</span><p>Dead booking form — <code>formEndpoint</code> is empty, all inquiries silently vanish</p></div>
+    <div class="agree-card"><span class="num">5/5</span><p>UZS-only pricing repels international guests — $85–120/night is competitive but "1,079,759" is not</p></div>
+    <div class="agree-card"><span class="num">5/5</span><p>"Est. — Nukus" with no year reads as an unfilled template field</p></div>
+    <div class="agree-card"><span class="num">4/5</span><p>Savitsky Museum proximity is buried — the hotel's strongest conversion asset</p></div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">Blind spots the council caught (peer review only)</div>
+  <div class="blind-card">
+    <div class="btitle">⚠ Guest confirmation missing (flagged by 3 of 5 reviewers)</div>
+    <p>After submitting the inquiry form, guests receive no acknowledgment — no on-page success state, no copy to their inbox. International travelers booking from abroad get radio silence and assume the hotel is closed or the form failed. Fix: add a guest confirmation email to <code>form-endpoint.gs</code> and verify the client-side success/error UI. Do this at the same time as deploying the endpoint.</p>
+  </div>
+  <div class="blind-card">
+    <div class="btitle">⚠ i18n gap — file-evidenced (flagged by 2 of 5 reviewers)</div>
+    <p><code>i18n.js</code> is listed as a modified file on this branch. The site has internationalization scaffolding, but no advisor verified it's wired up, complete, or working. Target guests include Europeans and Japanese cultural tourists. A form that works but communicates in one language is still a conversion problem. Audit <code>i18n.js</code> before launch.</p>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">Complete fix list — ordered by priority</div>
+  <div class="fix-list">
+    <div class="fix-item"><div class="fix-badge now">1</div><div class="fix-content"><div class="label">Deploy form endpoint</div><p>Open <code>form-endpoint.gs</code> → Google Apps Script → Deploy as Web App → copy <code>/exec</code> URL → paste into <code>hotel.js</code> <code>formEndpoint</code>. Test with a real submission.</p></div></div>
+    <div class="fix-item"><div class="fix-badge now">2</div><div class="fix-content"><div class="label">Add guest confirmation email</div><p>Add a <code>MailApp.sendEmail()</code> call to the submitter in <code>form-endpoint.gs</code>. Do not deploy without it.</p></div></div>
+    <div class="fix-item"><div class="fix-badge now">3</div><div class="fix-content"><div class="label">Verify form success/error UI</div><p>Confirm the client-side success and error states in the form modal are visible and correct after submission.</p></div></div>
+    <div class="fix-item"><div class="fix-badge now">4</div><div class="fix-content"><div class="label">Add USD prices to every room</div><p>In <code>rooms.js</code>, add USD equivalent alongside each UZS price. ~20 minutes. Hardcode a rate; update quarterly.</p></div></div>
+    <div class="fix-item"><div class="fix-badge now">5</div><div class="fix-content"><div class="label">Fix "Est. — Nukus" tag</div><p>Add the founding year to the About page media tag, or remove it. One-line edit.</p></div></div>
+    <div class="fix-item"><div class="fix-badge month">6</div><div class="fix-content"><div class="label">Audit i18n.js</div><p>Verify language switching works end-to-end. Confirm booking form fields are translated in every active locale.</p></div></div>
+    <div class="fix-item"><div class="fix-badge month">7</div><div class="fix-content"><div class="label">Elevate Savitsky Museum to hero copy</div><p>"3 minutes from the Savitsky Museum" must appear before the fold on the homepage — not buried in About.</p></div></div>
+    <div class="fix-item"><div class="fix-badge month">8</div><div class="fix-content"><div class="label">Add privacy policy + cookie notice + HTTPS</div><p>The form collects personal data from EU visitors. No privacy policy = GDPR exposure. Verify HTTPS is active.</p></div></div>
+    <div class="fix-item"><div class="fix-badge month">9</div><div class="fix-content"><div class="label">Add WhatsApp/email fallback in footer</div><p>Until the endpoint is proven reliable, guests need a direct human contact path visible on every page.</p></div></div>
+    <div class="fix-item"><div class="fix-badge month">10</div><div class="fix-content"><div class="label">Test mobile menu at 390px</div><p>Simulate iPhone 390px in Chrome DevTools. Test hamburger menu end-to-end before any marketing spend.</p></div></div>
+    <div class="fix-item"><div class="fix-badge later">↓</div><div class="fix-content"><div class="label">OTA listings + SEO + PMS (defer)</div><p>Booking.com, Expedia, structured data, Lodgify — right moves eventually. Wrong priority before the endpoint works.</p></div></div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">Advisor performance</div>
+  <div class="advisor-grid">
+    <div class="advisor-card"><div class="advisor-name">The Executor</div><span class="advisor-score score-strong">Strongest — 5/5 reviewers</span><p>Named specific files, gave time estimates, ordered by blocking severity. Directly actionable.</p></div>
+    <div class="advisor-card"><div class="advisor-name">The Contrarian</div><span class="advisor-score score-ok">Unique catch</span><p>Only advisor to flag GDPR/SSL/privacy policy and Apps Script fragility.</p></div>
+    <div class="advisor-card"><div class="advisor-name">The Outsider</div><span class="advisor-score score-ok">Strong framing</span><p>"Site looks finished but isn't" and Nukus orientation gap.</p></div>
+    <div class="advisor-card"><div class="advisor-name">The First Principles</div><span class="advisor-score score-ok">Good diagnosis</span><p>Clear 3-step booking breakdown. Stopped short of actionable specifics.</p></div>
+    <div class="advisor-card"><div class="advisor-name">The Expansionist</div><span class="advisor-score score-weak">Off-brief — 5/5 reviewers</span><p>Confused growth roadmap with launch checklist. OTA/PMS advice is right eventually.</p></div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">Full advisor responses</div>
+  <details><summary>The Executor — strongest · file-specific priority list</summary><div class="body">Priority 1 — Deploy form-endpoint.gs, copy /exec URL into hotel.js formEndpoint. Test with real submission. Priority 2 — Add USD to rooms.js (20 min). Priority 3 — Fix "Est. — Nukus" tag (one-line). Priority 4 — Surface Savitsky Museum in hero. Priority 5 — Test mobile at 390px. None require redesign. All finishable today.</div></details>
+  <details><summary>The Contrarian — unique GDPR + Apps Script fragility catch</summary><div class="body">Dead formEndpoint = conversion rate zero. Even if live, Apps Script is a single point of failure with no logging, no guest confirmation, no spam protection. UZS-only = self-sabotage. "Est." with no year destroys credibility. No SSL, cookie notice, privacy policy = GDPR exposure. No availability calendar = 24–48h lag.</div></details>
+  <details><summary>The First Principles Thinker — 3-step booking breakdown</summary><div class="body">A booking requires 3 steps: (1) guest inquires, (2) inquiry reaches owner, (3) owner responds. Step 2 is broken. Guest questions: "Can I trust this price?" (UZS fails), "Is this place real?" (no Est. year), "Can I actually book?" (comparison-shopping on Booking.com — need response-time SLA).</div></details>
+  <details><summary>The Outsider — "site looks finished but isn't"</summary><div class="body">Dead form = invisible sabotage. "1,079,759 UZS" — Europeans leave or do math they shouldn't. "Est. — Nukus" reads as unfilled template. Nukus/Karakalpakstan not household names — orient visitors with one sentence about Savitsky Museum. Add WhatsApp fallback. Visitors judge readiness by what they try to use.</div></details>
+  <details><summary>The Expansionist — off-brief: growth advice vs. launch readiness</summary><div class="body">OTA channels (Booking.com, Expedia, Hostelworld), PMS integration (Beds24, Lodgify), SEO for gallery. "Hotel near Savitsky Museum" has zero search competition. "3 minutes from the world's second-largest Russian avant-garde collection" should be a headline. Right advice — wrong timing.</div></details>
+</div>
+
+<div class="footer">LLM Council · IDEAL Hotel · 2026-06-16 · Advisors: Contrarian · First Principles · Expansionist · Outsider · Executor</div>
+</body>
+</html>
