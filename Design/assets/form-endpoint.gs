@@ -43,7 +43,7 @@ function doPost(e) {
     ]);
 
     // --- email the hotel ---
-    var to      = Session.getActiveUser().getEmail(); // sends to the account running this script
+    var to      = 'damirhotel@gmail.com';
     var subject = 'New inquiry — ' + (data.name || 'guest') +
                   (data.checkin  ? ', ' + data.checkin  : '') +
                   (data.checkout ? ' – ' + data.checkout : '');
@@ -72,6 +72,37 @@ function doPost(e) {
       body:    body,
       replyTo: data.email || to
     });
+
+    // --- confirmation email to the guest ---
+    if (data.email) {
+      var guestBody = [
+        'Dear ' + (data.name || 'Guest') + ',',
+        '',
+        'Thank you for your inquiry. We have received your request and will',
+        'get back to you within 24 hours to confirm availability.',
+        '',
+        'Here is a summary of your request:',
+        '',
+        'Check-in:   ' + (data.checkin  || '—'),
+        'Check-out:  ' + (data.checkout || '—'),
+        'Guests:     ' + (data.guests   || '—'),
+        'Room:       ' + (data.room     || 'No preference'),
+        '',
+        data.message ? ('Your message:\n' + data.message + '\n') : '',
+        'If you have any questions in the meantime, please reply to this',
+        'email or call us directly.',
+        '',
+        'Warm regards,',
+        'Damir Hotel'
+      ].join('\n');
+
+      MailApp.sendEmail({
+        to:      data.email,
+        subject: 'We received your inquiry — Damir Hotel',
+        body:    guestBody,
+        replyTo: to
+      });
+    }
 
     return ContentService
       .createTextOutput(JSON.stringify({ ok: true }))

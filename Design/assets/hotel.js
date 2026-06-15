@@ -5,12 +5,13 @@
 window.HOTEL = {
 
   /* -- identity -- */
-  name:    'Damir Hotel',
+  name:    'IDEAL Hotel',
 
   /* -- contact -- */
-  address: 'Рауаж 4, 230100 Nukus',
-  phone:   '+998 55 106 07 07',
-  email:   'damirhotel@gmail.com',
+  address: 'ул. А. Досназарова, 100А, 230100 Nukus',
+  phone:   '+998 61 222 33 44',
+  email:     'info@idealhotel.uz',
+  whatsapp:  'https://wa.me/998612223344',
 
   /* -- form endpoint (Google Apps Script web app URL) --
      Paste the URL from your deployed Apps Script here.
@@ -19,33 +20,33 @@ window.HOTEL = {
   formEndpoint: '',
 
   /* -- footer blurb -- */
-  footerDesc: 'A quiet landmark of warm hospitality in Nukus, Karakalpakstan — considered rooms, generous breakfasts and the kind of calm that makes a stay feel like a retreat.',
+  footerDesc: 'A contemporary landmark of hospitality in Nukus, Karakalpakstan — crystal-lit interiors, marble finishes and attentive service, steps from the Savitsky Museum.',
 
   /* -- social links (label + url pairs) -- */
   social: [
-    { label: 'Instagram', url: 'https://www.instagram.com/damir.hotel.nukus?igsh=MXI1bjc1am8xc3BlMA==' },
-    { label: 'Telegram',  url: 'https://t.me/damirhotel' },
+    { label: 'Instagram', url: 'https://www.instagram.com/idealhotel.nukus' },
+    { label: 'Telegram',  url: 'https://t.me/idealhotelnukus' },
   ],
 
   /* -- maps -- */
   maps: {
-    embed: 'https://maps.google.com/maps?cid=14626927219850202997&z=17&output=embed',
-    link:  'https://maps.app.goo.gl/Wg1mtnSK3sqhvAjs8',
+    embed: 'https://maps.google.com/maps?q=ул.+А.+Досназарова+100А+Nukus+Uzbekistan&z=17&output=embed',
+    link:  'https://maps.google.com/?q=ул.+А.+Досназарова+100А+Nukus+Uzbekistan',
   },
 
   /* -- stats strip (shown on homepage and about page) -- */
   stats: [
-    { n: '8.2',    l: 'Very good rating' },
-    { n: '9.3',    l: 'Location score'   },
-    { n: '155',    l: 'Guest reviews'    },
-    { n: '2.2 km', l: 'To Nukus Airport' },
+    { n: '9.2',    l: 'Guest rating'     },
+    { n: '9.1',    l: 'Couples score'    },
+    { n: '8.9',    l: 'Facilities score' },
+    { n: '1.5 km', l: 'To Nukus Airport' },
   ],
 
   /* -- testimonials (rotating slider on homepage) -- */
   testimonials: [
-    { text: 'The warmest welcome we had on our whole trip. The room was immaculate and the breakfast was extraordinary.', by: 'Aigerim K. — Almaty'  },
-    { text: 'Quiet, spotless and genuinely kind service. The suite felt more like a private apartment than a hotel.',     by: 'Daniel R. — London'   },
-    { text: 'We came for one night and extended to three. Everything just works, and nothing is rushed.',                  by: 'Sofia M. — Istanbul'  },
+    { text: 'Great location — walking distance to the Savitsky Museum. Nice area to hang out with friends on every floor too.', by: 'Choon — Singapore' },
+    { text: 'New hotel, modern and clean, very central. Great location near the Art Museum. They arranged a taxi trip to Moynaq for me.', by: 'Duncan — United Kingdom' },
+    { text: 'The staff very helpful and friendly, beautifully decorated, comfortable, walking distance to all sites to be visited.', by: 'Jenny — Australia' },
   ],
 
 };
