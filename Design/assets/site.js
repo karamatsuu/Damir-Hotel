@@ -258,33 +258,42 @@
       var btn     = form.querySelector('[type="submit"]');
       var btnText = btn ? btn.textContent : '';
 
+      function setSuccessMsg(msg) {
+        if (success) { var p = success.querySelector('p'); if (p) p.textContent = msg; }
+      }
       function showSuccess() {
         form.style.display = 'none';
         if (errBox) errBox.classList.remove('show');
         if (success) success.classList.add('show');
         form.reset();
       }
-      function showError() {
-        if (btn) { btn.disabled = false; btn.textContent = btnText; }
-        if (errBox) errBox.classList.add('show');
-      }
-
-      var endpoint = window.HOTEL && window.HOTEL.formEndpoint;
-      if (!endpoint) {
-        // No backend configured — open WhatsApp with the inquiry pre-filled
+      function openWa() {
         var wa = (window.HOTEL && window.HOTEL.whatsapp) || 'https://wa.me/998612223344';
         var d = {};
         form.querySelectorAll('[name]').forEach(function (el) { if (el.name) d[el.name] = el.value; });
         var lines = ['Hello, I would like to book a room at Damir Hotel.', ''];
-        if (d.name)     lines.push('Name: '       + d.name);
-        if (d.email)    lines.push('Email: '      + d.email);
-        if (d.phone)    lines.push('Phone: '      + d.phone);
-        if (d.checkin)  lines.push('Check-in: '   + d.checkin);
-        if (d.checkout) lines.push('Check-out: '  + d.checkout);
-        if (d.guests)   lines.push('Guests: '     + d.guests);
-        if (d.room)     lines.push('Room: '       + d.room);
-        if (d.message)  lines.push('', 'Notes: '  + d.message);
+        if (d.name)     lines.push('Name: '      + d.name);
+        if (d.email)    lines.push('Email: '     + d.email);
+        if (d.phone)    lines.push('Phone: '     + d.phone);
+        if (d.checkin)  lines.push('Check-in: '  + d.checkin);
+        if (d.checkout) lines.push('Check-out: ' + d.checkout);
+        if (d.guests)   lines.push('Guests: '    + d.guests);
+        if (d.room)     lines.push('Room: '      + d.room);
+        if (d.message)  lines.push('', 'Notes: ' + d.message);
         window.open(wa + '?text=' + encodeURIComponent(lines.join('\n')), '_blank');
+      }
+      function showError() {
+        if (btn) { btn.disabled = false; btn.textContent = btnText; }
+        // Always give the user an escape hatch — open WhatsApp with pre-filled data
+        openWa();
+        setSuccessMsg('WhatsApp has opened with your inquiry — tap Send and our team will confirm your stay within a few hours.');
+        showSuccess();
+      }
+
+      var endpoint = window.HOTEL && window.HOTEL.formEndpoint;
+      if (!endpoint) {
+        openWa();
+        setSuccessMsg('WhatsApp has opened with your inquiry — tap Send and our team will confirm your stay within a few hours.');
         showSuccess();
         return;
       }
@@ -303,7 +312,14 @@
         body:    JSON.stringify(data)
       })
       .then(function (r) { return r.json(); })
-      .then(function (json) { json.ok ? showSuccess() : showError(); })
+      .then(function (json) {
+        if (json.ok) {
+          setSuccessMsg('Your inquiry has been received — our team will confirm your stay within a few hours.');
+          showSuccess();
+        } else {
+          showError();
+        }
+      })
       .catch(showError);
     });
     // clear invalid on input; for date fields re-run date check so co stays linked
