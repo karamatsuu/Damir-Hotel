@@ -3,10 +3,25 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://script.google.com https://*.workers.dev; frame-src https://maps.google.com;">
 <title>Contact — Damir Hotel</title>
 <meta name="description" content="Contact Damir Hotel in Nukus, Karakalpakstan — address, phone, email, map and reservation inquiries.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Damir Hotel">
+<meta property="og:title" content="Contact — Damir Hotel">
+<meta property="og:description" content="Contact Damir Hotel in Nukus, Karakalpakstan — address, phone, email, map and reservation inquiries.">
+<meta property="og:url" content="https://karamatsuu.github.io/Damir-Hotel/contact.html">
+<meta property="og:image" content="https://karamatsuu.github.io/Damir-Hotel/assets/photos/junior-suite.jpg">
+<meta property="og:image:width" content="1024">
+<meta property="og:image:height" content="683">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Contact — Damir Hotel">
+<meta name="twitter:description" content="Contact Damir Hotel in Nukus, Karakalpakstan — address, phone, email, map and reservation inquiries.">
+<meta name="twitter:image" content="https://karamatsuu.github.io/Damir-Hotel/assets/photos/junior-suite.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Mulish:wght@300;400;500;600;700&display=swap">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <link rel="stylesheet" href="assets/styles.css">
 </head>
@@ -40,7 +55,7 @@
 <button class="book-float" data-book aria-label="Book a stay">Book a stay</button>
 
 <section class="page-hero page-hero--dark has-media">
-  <div class="hero-media"><img src="assets/photos/lobby-elevator.jpg" alt="Damir Hotel lobby" loading="lazy"></div>
+  <div class="hero-media"><picture><source type="image/webp" srcset="assets/photos/webp/lobby-elevator.webp"><img src="assets/photos/lobby-elevator.jpg" alt="Damir Hotel lobby" loading="lazy"></picture></div>
   <div class="container" style="position:relative;z-index:2;padding-bottom:1rem">
     <p class="eyebrow">Contact</p>
     <h1>We would love<br>to host you.</h1>
@@ -53,8 +68,8 @@
         <p class="eyebrow"><span class="hairline"></span>Reach us</p>
         <h2 class="serif" style="font-size:clamp(1.8rem,3.4vw,2.6rem);margin:1rem 0 1.6rem">Get in touch</h2>
         <div class="contact-card"><div class="k">Address</div><div class="v" data-h="address">ул. А. Досназарова, 100А, 230100 Nukus, Karakalpakstan</div></div>
-        <div class="contact-card"><div class="k">Telephone</div><div class="v"><a data-h="phone" href="tel:+998612223344">+998 61 222 33 44</a></div></div>
-        <div class="contact-card"><div class="k">Email</div><div class="v"><a data-h="email" href="mailto:info@idealhotel.uz">info@idealhotel.uz</a></div></div>
+        <div class="contact-card"><div class="k">Telephone</div><div class="v"><a data-h="phone" href="tel:+998551060707">+998 55 106 07 07</a></div></div>
+        <div class="contact-card"><div class="k">Email</div><div class="v"><a data-h="email" href="mailto:damirhotel@gmail.com">damirhotel@gmail.com</a></div></div>
         <div class="contact-card"><div class="k">Reception</div><div class="v">Open 24 hours</div></div>
         <div class="map-wrap" style="margin-top:2rem">
           <div class="map-fallback"><span class="pin"></span><span class="pl">ул. А. Досназарова, 100А, Nukus</span><span class="ps">Damir Hotel</span></div>
@@ -81,15 +96,16 @@
             </div>
             <div class="field"><label>Room type</label><select name="room"><option value="">No preference</option><option value="Twin Room">Twin Room</option><option value="Standard Suite">Standard Suite</option><option value="Family Room">Family Room</option><option value="Single Room">Single Room</option></select></div>
             <div class="field"><label>Message</label><textarea name="message" placeholder="Tell us about your stay…"></textarea></div>
+            <div class="hp-field" aria-hidden="true"><label>Website</label><input type="text" name="website" tabindex="-1" autocomplete="off"></div>
             <button type="submit" class="btn btn--block">Send inquiry</button>
           </form>
           <div class="form-success">
             <div class="ok">&#10003;</div>
             <h3 class="serif" style="margin-bottom:.6rem">Thank you</h3>
-            <p>Your inquiry has been received — we'll reply within a few hours to confirm availability.</p>
+            <p>Your inquiry was sent — we'll contact you within 24 hours.</p>
           </div>
           <div class="form-error">
-            <p>Couldn't send your inquiry — please email us directly at <a data-h="email" href="mailto:info@idealhotel.uz">info@idealhotel.uz</a></p>
+            <p>Couldn't send your inquiry — please email us directly at <a data-h="email" href="mailto:damirhotel@gmail.com">damirhotel@gmail.com</a></p>
           </div>
         </div>
       </div>
@@ -129,7 +145,7 @@
   <div class="container">
     <div class="footer-top">
       <div class="footer-brand">
-        <a href="index.html" class="brand"><span class="brand-mark">I</span><span class="brand-text"><span class="brand-name">IDEAL</span><span class="brand-sub">HOTEL</span></span></a>
+        <a href="index.html" class="brand"><span class="brand-mark">D</span><span class="brand-text"><span class="brand-name">Damir</span><span class="brand-sub">Hotel</span></span></a>
         <p data-h="footerDesc">A quiet landmark of warm hospitality in Nukus, Karakalpakstan — considered rooms, generous breakfasts and the kind of calm that makes a stay feel like a retreat.</p>
       </div>
       <div class="footer-col"><h5>Explore</h5><ul><li><a href="rooms.html">Rooms & Suites</a></li><li><a href="dining.html">Dining</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></div>
@@ -141,15 +157,15 @@
       </ul></div>
       <div class="footer-col"><h5>Contact</h5><ul>
         <li data-h="address">ул. А. Досназарова, 100А, 230100 Nukus</li>
-        <li><a data-h="phone" href="tel:+998612223344">+998 61 222 33 44</a></li>
-        <li><a data-h="email" href="mailto:info@idealhotel.uz">info@idealhotel.uz</a></li>
-        <li><a data-h-href="whatsapp" href="https://wa.me/998612223344" target="_blank" rel="noopener">WhatsApp</a></li>
+        <li><a data-h="phone" href="tel:+998551060707">+998 55 106 07 07</a></li>
+        <li><a data-h="email" href="mailto:damirhotel@gmail.com">damirhotel@gmail.com</a></li>
+        <li><a data-h-href="telegram" href="https://t.me/damirhotel" target="_blank" rel="noopener">@damirhotel</a></li>
         <li>Reception open 24 hours</li>
       </ul></div>
     </div>
     <div class="footer-bottom">
       <span>© <span data-year>2026</span> <span data-h="name">Damir Hotel</span>. All rights reserved.</span>
-      <span class="social" data-h-social><a href="https://www.instagram.com/idealhotel.nukus" target="_blank" rel="noopener">Instagram</a><a href="https://t.me/idealhotelnukus" target="_blank" rel="noopener">Telegram</a></span>
+      <span class="social" data-h-social><a href="https://www.instagram.com/idealhotel.nukus" target="_blank" rel="noopener">Instagram</a><a href="https://t.me/damirhotel" target="_blank" rel="noopener">Telegram</a></span>
     </div>
   </div>
 </footer>
@@ -173,17 +189,18 @@
         <div class="field"><label>Room type</label><select name="room"><option value="">No preference</option><option value="Twin Room">Twin Room</option><option value="Standard Suite">Standard Suite</option><option value="Family Room">Family Room</option><option value="Single Room">Single Room</option></select></div>
       </div>
       <div class="field"><label>Anything we should know?</label><textarea name="message" placeholder="Arrival time, occasion, requests…"></textarea></div>
+      <div class="hp-field" aria-hidden="true"><label>Website</label><input type="text" name="website" tabindex="-1" autocomplete="off"></div>
       <button type="submit" class="btn btn--block">Send inquiry</button>
       <p class="muted" style="font-size:.78rem;text-align:center;margin:1rem 0 0">No payment is taken now — our team replies within a few hours to confirm availability.</p>
     </form>
     <div class="form-success">
       <div class="ok">&#10003;</div>
       <h3 class="serif" style="margin-bottom:.6rem">Thank you</h3>
-      <p>Your request has reached our reservations desk. We'll be in touch shortly to confirm your stay at Damir Hotel.</p>
+      <p>Your inquiry was sent — we'll contact you within 24 hours.</p>
       <button class="btn btn--ghost" data-modal-close style="margin-top:.6rem">Close</button>
     </div>
     <div class="form-error">
-      <p>Couldn't send your inquiry — please email us directly at <a data-h="email" href="mailto:info@idealhotel.uz">info@idealhotel.uz</a></p>
+      <p>Couldn't send your inquiry — please email us directly at <a data-h="email" href="mailto:damirhotel@gmail.com">damirhotel@gmail.com</a></p>
     </div>
   </div>
 </div>
