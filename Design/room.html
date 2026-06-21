@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Room — IDEAL Hotel</title>
-<meta name="description" content="Room detail at IDEAL Hotel.">
+<title>Room — Damir Hotel</title>
+<meta name="description" content="Room detail at Damir Hotel.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
@@ -19,7 +19,7 @@
       <a href="dining.html" class="nav-link">Dining</a>
       <a href="gallery.html" class="nav-link">Gallery</a>
     </nav>
-    <a href="index.html" class="brand-center" aria-label="IDEAL Hotel home">IDEAL · HOTEL</a>
+    <a href="index.html" class="brand-center" aria-label="Damir Hotel home">DAMIR · HOTEL</a>
     <div class="nav-right">
       <a href="about.html" class="nav-link">About</a>
       <a href="contact.html" class="nav-link">Contact</a>
@@ -39,7 +39,7 @@
 </nav>
 <button class="book-float" data-book aria-label="Book a stay">Book a stay</button>
 <section class="page-hero page-hero--dark has-media">
-  <div class="hero-media"><img src="assets/photos/suite-bed.jpg" alt="Room at IDEAL Hotel" loading="lazy"></div>
+  <div class="hero-media"><img src="assets/photos/suite-bed.jpg" alt="Room at Damir Hotel" loading="lazy"></div>
   <div class="container" style="position:relative;z-index:2;padding-bottom:1rem">
     <p class="crumbs"><a href="index.html">Home</a> &nbsp;/&nbsp; <a href="rooms.html">Rooms &amp; Suites</a> &nbsp;/&nbsp; <span id="crumb-name">Room</span></p>
   </div>
@@ -61,7 +61,7 @@
 </section>
 
 <section class="cta-banner">
-  <div class="hero-media"><img src="assets/photos/lobby-hall.jpg" alt="IDEAL Hotel lobby"></div>
+  <div class="hero-media"><img src="assets/photos/lobby-hall.jpg" alt="Damir Hotel lobby"></div>
   <div class="container cta-inner">
     <p class="eyebrow" style="color:var(--gold-2)">Reserve your room</p>
     <h2 class="serif" style="font-style:normal">Your quiet retreat is ready when you are.</h2>
@@ -93,7 +93,7 @@
       </ul></div>
     </div>
     <div class="footer-bottom">
-      <span>© <span data-year>2026</span> <span data-h="name">IDEAL Hotel</span>. All rights reserved.</span>
+      <span>© <span data-year>2026</span> <span data-h="name">Damir Hotel</span>. All rights reserved.</span>
       <span class="social" data-h-social><a href="https://www.instagram.com/idealhotel.nukus" target="_blank" rel="noopener">Instagram</a><a href="https://t.me/idealhotelnukus" target="_blank" rel="noopener">Telegram</a></span>
     </div>
   </div>
@@ -124,7 +124,7 @@
     <div class="form-success">
       <div class="ok">&#10003;</div>
       <h3 class="serif" style="margin-bottom:.6rem">Thank you</h3>
-      <p>Your request has reached our reservations desk. We'll be in touch shortly to confirm your stay at IDEAL Hotel.</p>
+      <p>WhatsApp has opened with your inquiry pre-filled — tap Send and our team will confirm your stay within a few hours.</p>
       <button class="btn btn--ghost" data-modal-close style="margin-top:.6rem">Close</button>
     </div>
     <div class="form-error">
@@ -136,7 +136,7 @@
 <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
   <button class="lb-btn lb-close" aria-label="Close">&times;</button>
   <button class="lb-btn lb-prev" aria-label="Previous">&#8249;</button>
-  <img alt="IDEAL Hotel gallery image">
+  <img alt="Damir Hotel gallery image">
   <button class="lb-btn lb-next" aria-label="Next">&#8250;</button>
   <span class="lb-count"></span>
 </div>
@@ -147,7 +147,7 @@
   var rooms = window.DAMIR_ROOMS, I = window.DAMIR_ICONS;
   var id = new URLSearchParams(location.search).get('id') || 'suite';
   var r = rooms.find(function(x){return x.id===id;}) || rooms[rooms.length-1];
-  document.title = r.name + ' — IDEAL Hotel';
+  document.title = r.name + ' — Damir Hotel';
   document.getElementById('crumb-name').textContent = r.name;
 
   var thumbs = r.images.map(function(src,i){

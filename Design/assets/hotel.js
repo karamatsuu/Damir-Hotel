@@ -5,7 +5,7 @@
 window.HOTEL = {
 
   /* -- identity -- */
-  name:    'IDEAL Hotel',
+  name:    'Damir Hotel',
 
   /* -- contact -- */
   address: 'ул. А. Досназарова, 100А, 230100 Nukus',
@@ -17,7 +17,7 @@ window.HOTEL = {
      Paste the URL from your deployed Apps Script here.
      See Design/assets/form-endpoint.gs for setup instructions.
      Leave empty to skip submission (dev mode). */
-  formEndpoint: '',
+  formEndpoint: 'https://script.google.com/macros/s/AKfycbz81caOvWVUZWZH8FXjIzqPUHHYe0HhAM1zoJppSXUSyG8xCpjQ6NyOUYTDpxOsMUtqVg/exec',
 
   /* -- footer blurb -- */
   footerDesc: 'A contemporary landmark of hospitality in Nukus, Karakalpakstan — crystal-lit interiors, marble finishes and attentive service, steps from the Savitsky Museum.',

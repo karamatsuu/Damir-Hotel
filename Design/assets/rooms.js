@@ -1,4 +1,4 @@
-/* Shared room data for IDEAL Hotel. Prices are public reference rates in UZS and can change by date. */
+/* Shared room data for Damir Hotel. Prices are public reference rates in UZS and can change by date. */
 /* USD rate: 12,700 UZS = $1 USD — update quarterly */
 window.DAMIR_ROOMS = [
   {

@@ -28,7 +28,7 @@ function doPost(e) {
     var data = JSON.parse(e.postData.contents);
 
     // --- append row to sheet ---
-    var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+    var sheet = SpreadsheetApp.openById('1YWA3XBrOs86UOA7BkRrz3hIsqqU2z7TO3kFDce81X-4').getActiveSheet();
     sheet.appendRow([
       new Date(),
       data.name     || '',
@@ -43,7 +43,7 @@ function doPost(e) {
     ]);
 
     // --- email the hotel ---
-    var to      = 'damirhotel@gmail.com';
+    var to      = 'abatbaevkaramat777@gmail.com';
     var subject = 'New inquiry — ' + (data.name || 'guest') +
                   (data.checkin  ? ', ' + data.checkin  : '') +
                   (data.checkout ? ' – ' + data.checkout : '');
