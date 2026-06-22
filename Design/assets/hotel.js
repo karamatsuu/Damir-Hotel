@@ -8,30 +8,30 @@ window.HOTEL = {
   name:    'Damir Hotel',
 
   /* -- contact -- */
-  address: 'ул. А. Досназарова, 100А, 230100 Nukus',
-  phone:   '+998 61 222 33 44',
-  email:     'info@idealhotel.uz',
-  whatsapp:  'https://wa.me/998612223344',
+  address: 'Qaraqalpaqstan, 6 A, Nukus',
+  phone:   '+998 55 106 07 07',
+  email:     'damirhotel@gmail.com',
+  telegram:  'https://t.me/damirhotel',
 
-  /* -- form endpoint (Google Apps Script web app URL) --
-     Paste the URL from your deployed Apps Script here.
-     See Design/assets/form-endpoint.gs for setup instructions.
-     Leave empty to skip submission (dev mode). */
-  formEndpoint: 'https://script.google.com/macros/s/AKfycbz81caOvWVUZWZH8FXjIzqPUHHYe0HhAM1zoJppSXUSyG8xCpjQ6NyOUYTDpxOsMUtqVg/exec',
+  /* -- form endpoint --
+     Point this at the Cloudflare Worker URL (worker/wrangler.toml), NOT the GAS URL directly.
+     The Worker signs each request with HMAC before forwarding to GAS.
+     Leave empty to fall back to Telegram (dev mode). */
+  formEndpoint: 'https://script.google.com/macros/s/AKfycbwoOYRs7rGOJO9sJBZqS2mqo_FqLtYGOearOWGJ4-SmWLywH65_6CdScgvUazK730Cq/exec',
 
   /* -- footer blurb -- */
-  footerDesc: 'A contemporary landmark of hospitality in Nukus, Karakalpakstan — crystal-lit interiors, marble finishes and attentive service, steps from the Savitsky Museum.',
+  footerDesc: 'A contemporary landmark of hospitality in Nukus, Qaraqalpaqstan — crystal-lit interiors, marble finishes and attentive service, steps from the Savitsky Museum.',
 
   /* -- social links (label + url pairs) -- */
   social: [
     { label: 'Instagram', url: 'https://www.instagram.com/idealhotel.nukus' },
-    { label: 'Telegram',  url: 'https://t.me/idealhotelnukus' },
+    { label: 'Telegram',  url: 'https://t.me/damirhotel' },
   ],
 
   /* -- maps -- */
   maps: {
-    embed: 'https://maps.google.com/maps?q=ул.+А.+Досназарова+100А+Nukus+Uzbekistan&z=17&output=embed',
-    link:  'https://maps.google.com/?q=ул.+А.+Досназарова+100А+Nukus+Uzbekistan',
+    embed: 'https://maps.google.com/maps?q=Qaraqalpaqstan+6+A+Nukus+Uzbekistan&z=17&output=embed',
+    link:  'https://maps.google.com/?q=Qaraqalpaqstan+6+A+Nukus+Uzbekistan',
   },
 
   /* -- stats strip (shown on homepage and about page) -- */
