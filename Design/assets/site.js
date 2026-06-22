@@ -289,10 +289,10 @@
       fetch(endpoint, {
         method:  'POST',
         headers: { 'Content-Type': 'text/plain' },
-        body:    JSON.stringify(data)
+        body:    JSON.stringify(data),
+        mode:    'no-cors'
       })
-      .then(function (r) { return r.json(); })
-      .then(function (json) { json.ok ? showSuccess() : showError(); })
+      .then(showSuccess)
       .catch(showError);
     });
     // clear invalid on input; for date fields re-run date check so co stays linked
