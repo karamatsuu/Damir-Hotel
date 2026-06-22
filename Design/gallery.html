@@ -3,10 +3,25 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://script.google.com https://*.workers.dev; frame-src https://maps.google.com;">
 <title>Gallery — Damir Hotel</title>
 <meta name="description" content="A photo gallery of Damir Hotel — rooms, dining, spaces and bathrooms.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Damir Hotel">
+<meta property="og:title" content="Gallery — Damir Hotel">
+<meta property="og:description" content="A photo gallery of Damir Hotel — rooms, dining, spaces and bathrooms.">
+<meta property="og:url" content="https://karamatsuu.github.io/Damir-Hotel/gallery.html">
+<meta property="og:image" content="https://karamatsuu.github.io/Damir-Hotel/assets/photos/junior-suite.jpg">
+<meta property="og:image:width" content="1024">
+<meta property="og:image:height" content="683">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Gallery — Damir Hotel">
+<meta name="twitter:description" content="A photo gallery of Damir Hotel — rooms, dining, spaces and bathrooms.">
+<meta name="twitter:image" content="https://karamatsuu.github.io/Damir-Hotel/assets/photos/junior-suite.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Mulish:wght@300;400;500;600;700&display=swap">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <link rel="stylesheet" href="assets/styles.css">
 </head>
@@ -40,10 +55,10 @@
 <button class="book-float" data-book aria-label="Book a stay">Book a stay</button>
 
 <section class="page-hero page-hero--dark has-media">
-  <div class="hero-media"><img src="assets/photos/lobby-glass.jpg" alt="Damir Hotel interior" loading="lazy"></div>
+  <div class="hero-media"><picture><source type="image/webp" srcset="assets/photos/webp/480/lobby-glass.webp 480w, assets/photos/webp/lobby-glass.webp 1024w" sizes="100vw"><img src="assets/photos/lobby-glass.jpg" alt="Damir Hotel interior" loading="lazy"></picture></div>
   <div class="container" style="position:relative;z-index:2;padding-bottom:1rem">
     <p class="eyebrow">Gallery</p>
-    <h1>A look<br>inside IDEAL.</h1>
+    <h1>A look<br>inside Damir Hotel.</h1>
   </div>
 </section>
 <section class="section" style="padding-top:0">
@@ -55,12 +70,37 @@
       <button class="gal-filter" data-filter="spaces">Spaces</button>
       <button class="gal-filter" data-filter="bath">Bathrooms</button>
     </div>
-    <div class="gal-grid"><figure class="gal-item" data-cat="rooms" data-full="assets/photos/twin-room2.jpg"><img src="assets/photos/twin-room2.jpg" alt="Damir Hotel — rooms" loading="lazy"></figure><figure class="gal-item" data-cat="rooms" data-full="assets/photos/suite-bed.jpg"><img src="assets/photos/suite-bed.jpg" alt="Damir Hotel — rooms" loading="lazy"></figure><figure class="gal-item" data-cat="rooms" data-full="assets/photos/suite-bed2.jpg"><img src="assets/photos/suite-bed2.jpg" alt="Damir Hotel — rooms" loading="lazy"></figure><figure class="gal-item" data-cat="spaces" data-full="assets/photos/corridor2.jpg"><img src="assets/photos/corridor2.jpg" alt="Damir Hotel — spaces" loading="lazy"></figure><figure class="gal-item" data-cat="dining" data-full="assets/photos/buffet-station.jpg"><img src="assets/photos/buffet-station.jpg" alt="Damir Hotel — dining" loading="lazy"></figure><figure class="gal-item" data-cat="spaces" data-full="assets/photos/lobby-chandelier.jpg"><img src="assets/photos/lobby-chandelier.jpg" alt="Damir Hotel — spaces" loading="lazy"></figure><figure class="gal-item" data-cat="rooms" data-full="assets/photos/twin.jpg"><img src="assets/photos/twin.jpg" alt="Damir Hotel — rooms" loading="lazy"></figure><figure class="gal-item" data-cat="bath" data-full="assets/photos/bath-marble.jpg"><img src="assets/photos/bath-marble.jpg" alt="Damir Hotel — bath" loading="lazy"></figure><figure class="gal-item" data-cat="rooms" data-full="assets/photos/family-room.jpg"><img src="assets/photos/family-room.jpg" alt="Damir Hotel — rooms" loading="lazy"></figure><figure class="gal-item" data-cat="dining" data-full="assets/photos/restaurant.jpg"><img src="assets/photos/restaurant.jpg" alt="Damir Hotel — dining" loading="lazy"></figure><figure class="gal-item" data-cat="dining" data-full="assets/photos/buffet-spread.jpg"><img src="assets/photos/buffet-spread.jpg" alt="Damir Hotel — dining" loading="lazy"></figure><figure class="gal-item" data-cat="rooms" data-full="assets/photos/family-room2.jpg"><img src="assets/photos/family-room2.jpg" alt="Damir Hotel — rooms" loading="lazy"></figure><figure class="gal-item" data-cat="spaces" data-full="assets/photos/lobby-hall.jpg"><img src="assets/photos/lobby-hall.jpg" alt="Damir Hotel — spaces" loading="lazy"></figure><figure class="gal-item" data-cat="bath" data-full="assets/photos/robes.jpg"><img src="assets/photos/robes.jpg" alt="Damir Hotel — bath" loading="lazy"></figure><figure class="gal-item" data-cat="rooms" data-full="assets/photos/single-room2.jpg"><img src="assets/photos/single-room2.jpg" alt="Damir Hotel — rooms" loading="lazy"></figure><figure class="gal-item" data-cat="spaces" data-full="assets/photos/lobby-glass.jpg"><img src="assets/photos/lobby-glass.jpg" alt="Damir Hotel — spaces" loading="lazy"></figure><figure class="gal-item" data-cat="rooms" data-full="assets/photos/suite-desk.jpg"><img src="assets/photos/suite-desk.jpg" alt="Damir Hotel — rooms" loading="lazy"></figure><figure class="gal-item" data-cat="dining" data-full="assets/photos/bar.jpg"><img src="assets/photos/bar.jpg" alt="Damir Hotel — dining" loading="lazy"></figure><figure class="gal-item" data-cat="rooms" data-full="assets/photos/single.jpg"><img src="assets/photos/single.jpg" alt="Damir Hotel — rooms" loading="lazy"></figure><figure class="gal-item" data-cat="bath" data-full="assets/photos/bath.jpg"><img src="assets/photos/bath.jpg" alt="Damir Hotel — bath" loading="lazy"></figure><figure class="gal-item" data-cat="rooms" data-full="assets/photos/twin-interior.jpg"><img src="assets/photos/twin-interior.jpg" alt="Damir Hotel — rooms" loading="lazy"></figure><figure class="gal-item" data-cat="spaces" data-full="assets/photos/lobby-elevator.jpg"><img src="assets/photos/lobby-elevator.jpg" alt="Damir Hotel — spaces" loading="lazy"></figure><figure class="gal-item" data-cat="spaces" data-full="assets/photos/lobby-glass.jpg"><img src="assets/photos/lobby-glass.jpg" alt="Damir Hotel — spaces" loading="lazy"></figure><figure class="gal-item" data-cat="rooms" data-full="assets/photos/twin2.jpg"><img src="assets/photos/twin2.jpg" alt="Damir Hotel — rooms" loading="lazy"></figure></div>
+    <div class="gal-grid">
+<figure class="gal-item" data-cat="rooms" data-full="assets/photos/twin-room2.jpg"><picture><source type="image/webp" srcset="assets/photos/webp/480/twin-room2.webp 480w, assets/photos/webp/twin-room2.webp 1024w" sizes="(min-width: 900px) 25vw, 50vw"><img src="assets/photos/twin-room2.jpg" alt="Damir Hotel — rooms" loading="lazy"></picture></figure>
+<figure class="gal-item" data-cat="rooms" data-full="assets/photos/suite-bed.jpg"><picture><source type="image/webp" srcset="assets/photos/webp/480/suite-bed.webp 480w, assets/photos/webp/suite-bed.webp 1024w" sizes="(min-width: 900px) 25vw, 50vw"><img src="assets/photos/suite-bed.jpg" alt="Damir Hotel — rooms" loading="lazy"></picture></figure>
+<figure class="gal-item" data-cat="rooms" data-full="assets/photos/suite-bed2.jpg"><picture><source type="image/webp" srcset="assets/photos/webp/suite-bed2.webp"><img src="assets/photos/suite-bed2.jpg" alt="Damir Hotel — rooms" loading="lazy"></picture></figure>
+<figure class="gal-item" data-cat="spaces" data-full="assets/photos/corridor2.jpg"><picture><source type="image/webp" srcset="assets/photos/webp/corridor2.webp"><img src="assets/photos/corridor2.jpg" alt="Damir Hotel — spaces" loading="lazy"></picture></figure>
+<figure class="gal-item" data-cat="dining" data-full="assets/photos/buffet-station.jpg"><picture><source type="image/webp" srcset="assets/photos/webp/480/buffet-station.webp 480w, assets/photos/webp/buffet-station.webp 1024w" sizes="(min-width: 900px) 25vw, 50vw"><img src="assets/photos/buffet-station.jpg" alt="Damir Hotel — dining" loading="lazy"></picture></figure>
+<figure class="gal-item" data-cat="spaces" data-full="assets/photos/lobby-chandelier.jpg"><picture><source type="image/webp" srcset="assets/photos/webp/lobby-chandelier.webp"><img src="assets/photos/lobby-chandelier.jpg" alt="Damir Hotel — spaces" loading="lazy"></picture></figure>
+<figure class="gal-item" data-cat="rooms" data-full="assets/photos/twin.jpg"><picture><source type="image/webp" srcset="assets/photos/webp/twin.webp"><img src="assets/photos/twin.jpg" alt="Damir Hotel — rooms" loading="lazy"></picture></figure>
+<figure class="gal-item" data-cat="bath" data-full="assets/photos/bath-marble.jpg"><picture><source type="image/webp" srcset="assets/photos/webp/bath-marble.webp"><img src="assets/photos/bath-marble.jpg" alt="Damir Hotel — bath" loading="lazy"></picture></figure>
+<figure class="gal-item" data-cat="rooms" data-full="assets/photos/family-room.jpg"><picture><source type="image/webp" srcset="assets/photos/webp/480/family-room.webp 480w, assets/photos/webp/family-room.webp 1024w" sizes="(min-width: 900px) 25vw, 50vw"><img src="assets/photos/family-room.jpg" alt="Damir Hotel — rooms" loading="lazy"></picture></figure>
+<figure class="gal-item" data-cat="dining" data-full="assets/photos/restaurant.jpg"><picture><source type="image/webp" srcset="assets/photos/webp/restaurant.webp"><img src="assets/photos/restaurant.jpg" alt="Damir Hotel — dining" loading="lazy"></picture></figure>
+<figure class="gal-item" data-cat="dining" data-full="assets/photos/buffet-spread.jpg"><picture><source type="image/webp" srcset="assets/photos/webp/480/buffet-spread.webp 480w, assets/photos/webp/buffet-spread.webp 1024w" sizes="(min-width: 900px) 25vw, 50vw"><img src="assets/photos/buffet-spread.jpg" alt="Damir Hotel — dining" loading="lazy"></picture></figure>
+<figure class="gal-item" data-cat="rooms" data-full="assets/photos/family-room2.jpg"><picture><source type="image/webp" srcset="assets/photos/webp/480/family-room2.webp 480w, assets/photos/webp/family-room2.webp 1024w" sizes="(min-width: 900px) 25vw, 50vw"><img src="assets/photos/family-room2.jpg" alt="Damir Hotel — rooms" loading="lazy"></picture></figure>
+<figure class="gal-item" data-cat="spaces" data-full="assets/photos/lobby-hall.jpg"><picture><source type="image/webp" srcset="assets/photos/webp/480/lobby-hall.webp 480w, assets/photos/webp/lobby-hall.webp 1024w" sizes="(min-width: 900px) 25vw, 50vw"><img src="assets/photos/lobby-hall.jpg" alt="Damir Hotel — spaces" loading="lazy"></picture></figure>
+<figure class="gal-item" data-cat="bath" data-full="assets/photos/robes.jpg"><picture><source type="image/webp" srcset="assets/photos/webp/robes.webp"><img src="assets/photos/robes.jpg" alt="Damir Hotel — bath" loading="lazy"></picture></figure>
+<figure class="gal-item" data-cat="rooms" data-full="assets/photos/single-room2.jpg"><picture><source type="image/webp" srcset="assets/photos/webp/480/single-room2.webp 480w, assets/photos/webp/single-room2.webp 1024w" sizes="(min-width: 900px) 25vw, 50vw"><img src="assets/photos/single-room2.jpg" alt="Damir Hotel — rooms" loading="lazy"></picture></figure>
+<figure class="gal-item" data-cat="spaces" data-full="assets/photos/lobby-glass.jpg"><picture><source type="image/webp" srcset="assets/photos/webp/480/lobby-glass.webp 480w, assets/photos/webp/lobby-glass.webp 1024w" sizes="(min-width: 900px) 25vw, 50vw"><img src="assets/photos/lobby-glass.jpg" alt="Damir Hotel — spaces" loading="lazy"></picture></figure>
+<figure class="gal-item" data-cat="rooms" data-full="assets/photos/suite-desk.jpg"><picture><source type="image/webp" srcset="assets/photos/webp/suite-desk.webp"><img src="assets/photos/suite-desk.jpg" alt="Damir Hotel — rooms" loading="lazy"></picture></figure>
+<figure class="gal-item" data-cat="dining" data-full="assets/photos/bar.jpg"><picture><source type="image/webp" srcset="assets/photos/webp/bar.webp"><img src="assets/photos/bar.jpg" alt="Damir Hotel — dining" loading="lazy"></picture></figure>
+<figure class="gal-item" data-cat="rooms" data-full="assets/photos/single.jpg"><picture><source type="image/webp" srcset="assets/photos/webp/480/single.webp 480w, assets/photos/webp/single.webp 1024w" sizes="(min-width: 900px) 25vw, 50vw"><img src="assets/photos/single.jpg" alt="Damir Hotel — rooms" loading="lazy"></picture></figure>
+<figure class="gal-item" data-cat="bath" data-full="assets/photos/bath.jpg"><picture><source type="image/webp" srcset="assets/photos/webp/bath.webp"><img src="assets/photos/bath.jpg" alt="Damir Hotel — bath" loading="lazy"></picture></figure>
+<figure class="gal-item" data-cat="rooms" data-full="assets/photos/twin-interior.jpg"><picture><source type="image/webp" srcset="assets/photos/webp/480/twin-interior.webp 480w, assets/photos/webp/twin-interior.webp 1024w" sizes="(min-width: 900px) 25vw, 50vw"><img src="assets/photos/twin-interior.jpg" alt="Damir Hotel — rooms" loading="lazy"></picture></figure>
+<figure class="gal-item" data-cat="spaces" data-full="assets/photos/lobby-elevator.jpg"><picture><source type="image/webp" srcset="assets/photos/webp/lobby-elevator.webp"><img src="assets/photos/lobby-elevator.jpg" alt="Damir Hotel — spaces" loading="lazy"></picture></figure>
+<figure class="gal-item" data-cat="spaces" data-full="assets/photos/lobby-glass.jpg"><picture><source type="image/webp" srcset="assets/photos/webp/480/lobby-glass.webp 480w, assets/photos/webp/lobby-glass.webp 1024w" sizes="(min-width: 900px) 25vw, 50vw"><img src="assets/photos/lobby-glass.jpg" alt="Damir Hotel — spaces" loading="lazy"></picture></figure>
+<figure class="gal-item" data-cat="rooms" data-full="assets/photos/twin2.jpg"><picture><source type="image/webp" srcset="assets/photos/webp/480/twin2.webp 480w, assets/photos/webp/twin2.webp 1024w" sizes="(min-width: 900px) 25vw, 50vw"><img src="assets/photos/twin2.jpg" alt="Damir Hotel — rooms" loading="lazy"></picture></figure>
+</div>
   </div>
 </section>
 
 <section class="cta-banner">
-  <div class="hero-media"><img src="assets/photos/lobby-hall.jpg" alt="Damir Hotel lobby"></div>
+  <div class="hero-media"><picture><source type="image/webp" srcset="assets/photos/webp/480/lobby-hall.webp 480w, assets/photos/webp/lobby-hall.webp 1024w" sizes="100vw"><img src="assets/photos/lobby-hall.jpg" alt="Damir Hotel lobby"></picture></div>
   <div class="container cta-inner">
     <p class="eyebrow" style="color:var(--gold-2)">Reserve your room</p>
     <h2 class="serif" style="font-style:normal">Your quiet retreat is ready when you are.</h2>
@@ -73,8 +113,8 @@
   <div class="container">
     <div class="footer-top">
       <div class="footer-brand">
-        <a href="index.html" class="brand"><span class="brand-mark">I</span><span class="brand-text"><span class="brand-name">IDEAL</span><span class="brand-sub">HOTEL</span></span></a>
-        <p data-h="footerDesc">A quiet landmark of warm hospitality in Nukus, Karakalpakstan — considered rooms, generous breakfasts and the kind of calm that makes a stay feel like a retreat.</p>
+        <a href="index.html" class="brand"><span class="brand-mark">D</span><span class="brand-text"><span class="brand-name">Damir</span><span class="brand-sub">Hotel</span></span></a>
+        <p data-h="footerDesc">A quiet landmark of warm hospitality in Nukus, Qaraqalpaqstan — considered rooms, generous breakfasts and the kind of calm that makes a stay feel like a retreat.</p>
       </div>
       <div class="footer-col"><h5>Explore</h5><ul><li><a href="rooms.html">Rooms & Suites</a></li><li><a href="dining.html">Dining</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></div>
       <div class="footer-col"><h5>Stay</h5><ul>
@@ -84,16 +124,16 @@
         <li><a href="contact.html">Directions</a></li>
       </ul></div>
       <div class="footer-col"><h5>Contact</h5><ul>
-        <li data-h="address">ул. А. Досназарова, 100А, 230100 Nukus</li>
-        <li><a data-h="phone" href="tel:+998612223344">+998 61 222 33 44</a></li>
-        <li><a data-h="email" href="mailto:info@idealhotel.uz">info@idealhotel.uz</a></li>
-        <li><a data-h-href="whatsapp" href="https://wa.me/998612223344" target="_blank" rel="noopener">WhatsApp</a></li>
+        <li data-h="address">Qaraqalpaqstan, 6 A, Nukus</li>
+        <li><a data-h="phone" href="tel:+998551060707">+998 55 106 07 07</a></li>
+        <li><a data-h="email" href="mailto:damirhotel@gmail.com">damirhotel@gmail.com</a></li>
+        <li><a data-h-href="telegram" href="https://t.me/damirhotel" target="_blank" rel="noopener">Telegram</a></li>
         <li>Reception open 24 hours</li>
       </ul></div>
     </div>
     <div class="footer-bottom">
       <span>© <span data-year>2026</span> <span data-h="name">Damir Hotel</span>. All rights reserved.</span>
-      <span class="social" data-h-social><a href="https://www.instagram.com/idealhotel.nukus" target="_blank" rel="noopener">Instagram</a><a href="https://t.me/idealhotelnukus" target="_blank" rel="noopener">Telegram</a></span>
+      <span class="social" data-h-social><a href="https://www.instagram.com/idealhotel.nukus" target="_blank" rel="noopener">Instagram</a><a href="https://t.me/damirhotel" target="_blank" rel="noopener">Telegram</a></span>
     </div>
   </div>
 </footer>
@@ -127,7 +167,7 @@
       <button class="btn btn--ghost" data-modal-close style="margin-top:.6rem">Close</button>
     </div>
     <div class="form-error">
-      <p>Couldn't send your inquiry — please email us directly at <a data-h="email" href="mailto:info@idealhotel.uz">info@idealhotel.uz</a></p>
+      <p>Couldn't send your inquiry — please email us directly at <a data-h="email" href="mailto:damirhotel@gmail.com">damirhotel@gmail.com</a></p>
     </div>
   </div>
 </div>

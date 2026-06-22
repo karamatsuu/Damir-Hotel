@@ -55,7 +55,10 @@ window.renderRoomCard = function (r) {
   return '' +
     '<article class="room-card reveal">' +
       '<a class="room-thumb" href="room.html?id=' + r.id + '">' +
+        '<picture>' +
+        '<source type="image/webp" srcset="assets/photos/webp/480/' + r.images[0].replace(/\.[^.]+$/, '.webp') + ' 480w, assets/photos/webp/' + r.images[0].replace(/\.[^.]+$/, '.webp') + ' 1024w" sizes="(min-width: 900px) 33vw, 100vw">' +
         '<img src="assets/photos/' + r.images[0] + '" alt="' + r.name + '" loading="lazy">' +
+        '</picture>' +
         '<span class="room-price-tag">$' + r.priceUsd + ' <small>/ night</small><em>UZS ' + r.price + '</em></span>' +
       '</a>' +
       '<div class="room-body">' +

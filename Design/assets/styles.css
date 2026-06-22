@@ -1,9 +1,8 @@
 /* ============================================================
-   IDEAL HOTEL — Design System
+   Damir Hotel — Design System
    Contemporary luxury. Bold serif + clean sans.
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Mulish:wght@300;400;500;600;700&display=swap');
 
 :root{
   /* palette */
@@ -621,6 +620,9 @@ body.nav-open .mobile-menu a:nth-child(7){ transition-delay:.38s; }
   /* stats */
   .facts{ grid-template-columns:repeat(2,1fr); gap:2.4rem; }
 }
+/* honeypot — keeps bots out; must not be display:none so non-JS bots render it */
+.hp-field{ position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden; opacity:0; pointer-events:none; tab-index:-1; }
+
 @media (max-width:560px){
   body{ font-size:16px; }
   .grid-2,.grid-3,.grid-4{ grid-template-columns:1fr; }

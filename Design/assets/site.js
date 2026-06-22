@@ -271,20 +271,9 @@
 
       var endpoint = window.HOTEL && window.HOTEL.formEndpoint;
       if (!endpoint) {
-        // No backend configured — open WhatsApp with the inquiry pre-filled
-        var wa = (window.HOTEL && window.HOTEL.whatsapp) || 'https://wa.me/998612223344';
-        var d = {};
-        form.querySelectorAll('[name]').forEach(function (el) { if (el.name) d[el.name] = el.value; });
-        var lines = ['Hello, I would like to book a room at Damir Hotel.', ''];
-        if (d.name)     lines.push('Name: '       + d.name);
-        if (d.email)    lines.push('Email: '      + d.email);
-        if (d.phone)    lines.push('Phone: '      + d.phone);
-        if (d.checkin)  lines.push('Check-in: '   + d.checkin);
-        if (d.checkout) lines.push('Check-out: '  + d.checkout);
-        if (d.guests)   lines.push('Guests: '     + d.guests);
-        if (d.room)     lines.push('Room: '       + d.room);
-        if (d.message)  lines.push('', 'Notes: '  + d.message);
-        window.open(wa + '?text=' + encodeURIComponent(lines.join('\n')), '_blank');
+        // No backend configured — open Telegram
+        var telegram = (window.HOTEL && window.HOTEL.telegram) || 'https://t.me/damirhotel';
+        window.open(telegram, '_blank');
         showSuccess();
         return;
       }
@@ -300,10 +289,10 @@
       fetch(endpoint, {
         method:  'POST',
         headers: { 'Content-Type': 'text/plain' },
-        body:    JSON.stringify(data)
+        body:    JSON.stringify(data),
+        mode:    'no-cors'
       })
-      .then(function (r) { return r.json(); })
-      .then(function (json) { json.ok ? showSuccess() : showError(); })
+      .then(showSuccess)
       .catch(showError);
     });
     // clear invalid on input; for date fields re-run date check so co stays linked
